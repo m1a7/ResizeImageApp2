@@ -1,0 +1,676 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AC21609E22E8650900BA696B /* СalculateImageSize.m in Sources */ = {isa = PBXBuildFile; fileRef = AC21609D22E8650900BA696B /* СalculateImageSize.m */; };
+		AC7F5A4B22E722C800EF3A58 /* CoreImageResizeImageSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7F5A4A22E722C800EF3A58 /* CoreImageResizeImageSwift.swift */; };
+		AC7F5A4E22E72BF000EF3A58 /* CoreImageResizeImageObjc.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7F5A4D22E72BF000EF3A58 /* CoreImageResizeImageObjc.m */; };
+		AC7F5A5222E74B5A00EF3A58 /* vImageResizeImageSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7F5A5122E74B5A00EF3A58 /* vImageResizeImageSwift.swift */; };
+		AC7F5A5522E74D2C00EF3A58 /* vImageResizeImageObjc.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7F5A5422E74D2C00EF3A58 /* vImageResizeImageObjc.m */; };
+		ACBDB8A822EEF9D3000C56D3 /* ManualTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACBDB8A722EEF9D3000C56D3 /* ManualTestController.m */; };
+		ACBDB8AD22EF02BF000C56D3 /* TestingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = ACBDB8AC22EF02BF000C56D3 /* TestingHelper.m */; };
+		ACE8F70C22E9260D008B1BD1 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ACE8F70B22E9260D008B1BD1 /* libz.tbd */; };
+		ACE8F70E22E92619008B1BD1 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ACE8F70D22E92619008B1BD1 /* libc++.tbd */; };
+		ACE8F71E22E926F1008B1BD1 /* GBDeviceInfo_Common.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE8F71A22E926F1008B1BD1 /* GBDeviceInfo_Common.m */; };
+		ACE8F71F22E926F1008B1BD1 /* GBDeviceInfo_iOS.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE8F71C22E926F1008B1BD1 /* GBDeviceInfo_iOS.m */; };
+		ACED7D7D22E349AC002873F4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ACED7D7C22E349AC002873F4 /* AppDelegate.m */; };
+		ACED7D8022E349AC002873F4 /* AutomaticTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACED7D7F22E349AC002873F4 /* AutomaticTestController.m */; };
+		ACED7D8322E349AC002873F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACED7D8122E349AC002873F4 /* Main.storyboard */; };
+		ACED7D8522E349B0002873F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACED7D8422E349B0002873F4 /* Assets.xcassets */; };
+		ACED7D8B22E349B0002873F4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ACED7D8A22E349B0002873F4 /* main.m */; };
+		ACED7DA822E353C3002873F4 /* UIKitResizeImageObjc.m in Sources */ = {isa = PBXBuildFile; fileRef = ACED7DA722E353C3002873F4 /* UIKitResizeImageObjc.m */; };
+		ACED7DAC22E354EC002873F4 /* UIKitResizeImageSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACED7DAB22E354EC002873F4 /* UIKitResizeImageSwift.swift */; };
+		ACED7DB022E36728002873F4 /* CoreGraphicsResizeImageSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACED7DAF22E36728002873F4 /* CoreGraphicsResizeImageSwift.swift */; };
+		ACED7DB322E36A60002873F4 /* CoreGraphicsResizeImageObjc.m in Sources */ = {isa = PBXBuildFile; fileRef = ACED7DB222E36A60002873F4 /* CoreGraphicsResizeImageObjc.m */; };
+		ACED7DB622E36B9E002873F4 /* ImageIOResizeImageSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACED7DB522E36B9E002873F4 /* ImageIOResizeImageSwift.swift */; };
+		ACED7DBA22E36D92002873F4 /* ImageIOResizeImageObjc.m in Sources */ = {isa = PBXBuildFile; fileRef = ACED7DB922E36D92002873F4 /* ImageIOResizeImageObjc.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AC21609C22E8650900BA696B /* СalculateImageSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "СalculateImageSize.h"; sourceTree = "<group>"; };
+		AC21609D22E8650900BA696B /* СalculateImageSize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "СalculateImageSize.m"; sourceTree = "<group>"; };
+		AC7F5A4A22E722C800EF3A58 /* CoreImageResizeImageSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreImageResizeImageSwift.swift; sourceTree = "<group>"; };
+		AC7F5A4C22E72BF000EF3A58 /* CoreImageResizeImageObjc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreImageResizeImageObjc.h; sourceTree = "<group>"; };
+		AC7F5A4D22E72BF000EF3A58 /* CoreImageResizeImageObjc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreImageResizeImageObjc.m; sourceTree = "<group>"; };
+		AC7F5A5122E74B5A00EF3A58 /* vImageResizeImageSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vImageResizeImageSwift.swift; sourceTree = "<group>"; };
+		AC7F5A5322E74D2C00EF3A58 /* vImageResizeImageObjc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vImageResizeImageObjc.h; sourceTree = "<group>"; };
+		AC7F5A5422E74D2C00EF3A58 /* vImageResizeImageObjc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = vImageResizeImageObjc.m; sourceTree = "<group>"; };
+		ACBDB8A622EEF9D3000C56D3 /* ManualTestController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ManualTestController.h; sourceTree = "<group>"; };
+		ACBDB8A722EEF9D3000C56D3 /* ManualTestController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ManualTestController.m; sourceTree = "<group>"; };
+		ACBDB8AB22EF02BF000C56D3 /* TestingHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestingHelper.h; sourceTree = "<group>"; };
+		ACBDB8AC22EF02BF000C56D3 /* TestingHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestingHelper.m; sourceTree = "<group>"; };
+		ACE8F70722E925B1008B1BD1 /* libGBDeviceInfo.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGBDeviceInfo.a; path = ResizeImageApp2/Frameworks/libGBDeviceInfo.a; sourceTree = "<group>"; };
+		ACE8F70B22E9260D008B1BD1 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		ACE8F70D22E92619008B1BD1 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		ACE8F71122E926F1008B1BD1 /* GBDeviceInfo-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GBDeviceInfo-Prefix.pch"; sourceTree = "<group>"; };
+		ACE8F71222E926F1008B1BD1 /* GBDeviceInfo_Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBDeviceInfo_Common.h; sourceTree = "<group>"; };
+		ACE8F71322E926F1008B1BD1 /* GBDeviceInfoTypes_Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBDeviceInfoTypes_Common.h; sourceTree = "<group>"; };
+		ACE8F71522E926F1008B1BD1 /* GBDeviceInfo_iOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBDeviceInfo_iOS.h; sourceTree = "<group>"; };
+		ACE8F71722E926F1008B1BD1 /* GBDeviceInfoTypes_iOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBDeviceInfoTypes_iOS.h; sourceTree = "<group>"; };
+		ACE8F71822E926F1008B1BD1 /* GBDeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBDeviceInfo.h; sourceTree = "<group>"; };
+		ACE8F71922E926F1008B1BD1 /* GBDeviceInfo_Subclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBDeviceInfo_Subclass.h; sourceTree = "<group>"; };
+		ACE8F71A22E926F1008B1BD1 /* GBDeviceInfo_Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBDeviceInfo_Common.m; sourceTree = "<group>"; };
+		ACE8F71B22E926F1008B1BD1 /* GBDeviceInfoInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBDeviceInfoInterface.h; sourceTree = "<group>"; };
+		ACE8F71C22E926F1008B1BD1 /* GBDeviceInfo_iOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBDeviceInfo_iOS.m; sourceTree = "<group>"; };
+		ACED7D7822E349AC002873F4 /* ResizeImageApp2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ResizeImageApp2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACED7D7B22E349AC002873F4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		ACED7D7C22E349AC002873F4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		ACED7D7E22E349AC002873F4 /* AutomaticTestController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutomaticTestController.h; sourceTree = "<group>"; };
+		ACED7D7F22E349AC002873F4 /* AutomaticTestController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutomaticTestController.m; sourceTree = "<group>"; };
+		ACED7D8222E349AC002873F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ACED7D8422E349B0002873F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ACED7D8922E349B0002873F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACED7D8A22E349B0002873F4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		ACED7DA622E353C3002873F4 /* UIKitResizeImageObjc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIKitResizeImageObjc.h; sourceTree = "<group>"; };
+		ACED7DA722E353C3002873F4 /* UIKitResizeImageObjc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIKitResizeImageObjc.m; sourceTree = "<group>"; };
+		ACED7DAA22E354EC002873F4 /* ResizeImageApp2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ResizeImageApp2-Bridging-Header.h"; sourceTree = "<group>"; };
+		ACED7DAB22E354EC002873F4 /* UIKitResizeImageSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitResizeImageSwift.swift; sourceTree = "<group>"; };
+		ACED7DAF22E36728002873F4 /* CoreGraphicsResizeImageSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreGraphicsResizeImageSwift.swift; sourceTree = "<group>"; };
+		ACED7DB122E36A60002873F4 /* CoreGraphicsResizeImageObjc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreGraphicsResizeImageObjc.h; sourceTree = "<group>"; };
+		ACED7DB222E36A60002873F4 /* CoreGraphicsResizeImageObjc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreGraphicsResizeImageObjc.m; sourceTree = "<group>"; };
+		ACED7DB522E36B9E002873F4 /* ImageIOResizeImageSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageIOResizeImageSwift.swift; sourceTree = "<group>"; };
+		ACED7DB822E36D92002873F4 /* ImageIOResizeImageObjc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageIOResizeImageObjc.h; sourceTree = "<group>"; };
+		ACED7DB922E36D92002873F4 /* ImageIOResizeImageObjc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageIOResizeImageObjc.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ACED7D7522E349AC002873F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACE8F70E22E92619008B1BD1 /* libc++.tbd in Frameworks */,
+				ACE8F70C22E9260D008B1BD1 /* libz.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AC21609A22E8646A00BA696B /* SharedTechnologies */ = {
+			isa = PBXGroup;
+			children = (
+				AC21609B22E8647900BA696B /* CalculateImageSize */,
+			);
+			path = SharedTechnologies;
+			sourceTree = "<group>";
+		};
+		AC21609B22E8647900BA696B /* CalculateImageSize */ = {
+			isa = PBXGroup;
+			children = (
+				AC21609C22E8650900BA696B /* СalculateImageSize.h */,
+				AC21609D22E8650900BA696B /* СalculateImageSize.m */,
+			);
+			path = CalculateImageSize;
+			sourceTree = "<group>";
+		};
+		AC7F5A4822E722A600EF3A58 /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				AC7F5A4A22E722C800EF3A58 /* CoreImageResizeImageSwift.swift */,
+			);
+			path = Swift;
+			sourceTree = "<group>";
+		};
+		AC7F5A4922E722AB00EF3A58 /* ObjectiveC */ = {
+			isa = PBXGroup;
+			children = (
+				AC7F5A4C22E72BF000EF3A58 /* CoreImageResizeImageObjc.h */,
+				AC7F5A4D22E72BF000EF3A58 /* CoreImageResizeImageObjc.m */,
+			);
+			path = ObjectiveC;
+			sourceTree = "<group>";
+		};
+		AC7F5A4F22E74B2500EF3A58 /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				AC7F5A5122E74B5A00EF3A58 /* vImageResizeImageSwift.swift */,
+			);
+			path = Swift;
+			sourceTree = "<group>";
+		};
+		AC7F5A5022E74B2C00EF3A58 /* ObjectiveC */ = {
+			isa = PBXGroup;
+			children = (
+				AC7F5A5322E74D2C00EF3A58 /* vImageResizeImageObjc.h */,
+				AC7F5A5422E74D2C00EF3A58 /* vImageResizeImageObjc.m */,
+			);
+			path = ObjectiveC;
+			sourceTree = "<group>";
+		};
+		ACBDB8A522EEF92E000C56D3 /* ManualTestController */ = {
+			isa = PBXGroup;
+			children = (
+				ACBDB8A622EEF9D3000C56D3 /* ManualTestController.h */,
+				ACBDB8A722EEF9D3000C56D3 /* ManualTestController.m */,
+			);
+			path = ManualTestController;
+			sourceTree = "<group>";
+		};
+		ACBDB8A922EEF9E7000C56D3 /* AutomaticTestController */ = {
+			isa = PBXGroup;
+			children = (
+				ACED7D7E22E349AC002873F4 /* AutomaticTestController.h */,
+				ACED7D7F22E349AC002873F4 /* AutomaticTestController.m */,
+			);
+			path = AutomaticTestController;
+			sourceTree = "<group>";
+		};
+		ACBDB8AA22EF01D7000C56D3 /* TestingHelper */ = {
+			isa = PBXGroup;
+			children = (
+				ACBDB8AB22EF02BF000C56D3 /* TestingHelper.h */,
+				ACBDB8AC22EF02BF000C56D3 /* TestingHelper.m */,
+			);
+			path = TestingHelper;
+			sourceTree = "<group>";
+		};
+		ACE8F6D622E9203F008B1BD1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ACE8F70F22E926F1008B1BD1 /* GBDeviceInfo */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		ACE8F70622E925B0008B1BD1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ACE8F70D22E92619008B1BD1 /* libc++.tbd */,
+				ACE8F70B22E9260D008B1BD1 /* libz.tbd */,
+				ACE8F70722E925B1008B1BD1 /* libGBDeviceInfo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ACE8F70F22E926F1008B1BD1 /* GBDeviceInfo */ = {
+			isa = PBXGroup;
+			children = (
+				ACE8F71122E926F1008B1BD1 /* GBDeviceInfo-Prefix.pch */,
+				ACE8F71222E926F1008B1BD1 /* GBDeviceInfo_Common.h */,
+				ACE8F71322E926F1008B1BD1 /* GBDeviceInfoTypes_Common.h */,
+				ACE8F71522E926F1008B1BD1 /* GBDeviceInfo_iOS.h */,
+				ACE8F71722E926F1008B1BD1 /* GBDeviceInfoTypes_iOS.h */,
+				ACE8F71822E926F1008B1BD1 /* GBDeviceInfo.h */,
+				ACE8F71922E926F1008B1BD1 /* GBDeviceInfo_Subclass.h */,
+				ACE8F71A22E926F1008B1BD1 /* GBDeviceInfo_Common.m */,
+				ACE8F71B22E926F1008B1BD1 /* GBDeviceInfoInterface.h */,
+				ACE8F71C22E926F1008B1BD1 /* GBDeviceInfo_iOS.m */,
+			);
+			path = GBDeviceInfo;
+			sourceTree = "<group>";
+		};
+		ACED7D6F22E349AC002873F4 = {
+			isa = PBXGroup;
+			children = (
+				ACED7D7A22E349AC002873F4 /* ResizeImageApp2 */,
+				ACED7D7922E349AC002873F4 /* Products */,
+				ACE8F70622E925B0008B1BD1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		ACED7D7922E349AC002873F4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ACED7D7822E349AC002873F4 /* ResizeImageApp2.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ACED7D7A22E349AC002873F4 /* ResizeImageApp2 */ = {
+			isa = PBXGroup;
+			children = (
+				ACED7D9D22E34EE5002873F4 /* Application */,
+				ACED7D9E22E34EEE002873F4 /* Controller */,
+				ACBDB8AA22EF01D7000C56D3 /* TestingHelper */,
+				ACED7D9C22E34EAB002873F4 /* View */,
+				ACED7D9F22E34F1F002873F4 /* ResizeImageTechnologies */,
+				ACED7DAA22E354EC002873F4 /* ResizeImageApp2-Bridging-Header.h */,
+				ACE8F6D622E9203F008B1BD1 /* Frameworks */,
+				ACED7D8922E349B0002873F4 /* Info.plist */,
+			);
+			path = ResizeImageApp2;
+			sourceTree = "<group>";
+		};
+		ACED7D9C22E34EAB002873F4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ACED7D8122E349AC002873F4 /* Main.storyboard */,
+				ACED7D8422E349B0002873F4 /* Assets.xcassets */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ACED7D9D22E34EE5002873F4 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				ACED7D7B22E349AC002873F4 /* AppDelegate.h */,
+				ACED7D7C22E349AC002873F4 /* AppDelegate.m */,
+				ACED7D8A22E349B0002873F4 /* main.m */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		ACED7D9E22E34EEE002873F4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				ACBDB8A522EEF92E000C56D3 /* ManualTestController */,
+				ACBDB8A922EEF9E7000C56D3 /* AutomaticTestController */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		ACED7D9F22E34F1F002873F4 /* ResizeImageTechnologies */ = {
+			isa = PBXGroup;
+			children = (
+				AC21609A22E8646A00BA696B /* SharedTechnologies */,
+				ACED7DA022E352FC002873F4 /* UIKit */,
+				ACED7DA122E35302002873F4 /* CoreGraphics */,
+				ACED7DA222E35309002873F4 /* ImageIO */,
+				ACED7DA322E35310002873F4 /* CoreImage */,
+				ACED7DA422E35317002873F4 /* vImage */,
+			);
+			path = ResizeImageTechnologies;
+			sourceTree = "<group>";
+		};
+		ACED7DA022E352FC002873F4 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				ACED7DA522E3534E002873F4 /* ObjectiveC */,
+				ACED7DA922E354D8002873F4 /* Swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		ACED7DA122E35302002873F4 /* CoreGraphics */ = {
+			isa = PBXGroup;
+			children = (
+				ACED7DAD22E36709002873F4 /* ObjectiveC */,
+				ACED7DAE22E36710002873F4 /* Swift */,
+			);
+			path = CoreGraphics;
+			sourceTree = "<group>";
+		};
+		ACED7DA222E35309002873F4 /* ImageIO */ = {
+			isa = PBXGroup;
+			children = (
+				ACED7DB722E36D83002873F4 /* ObjectiveC */,
+				ACED7DB422E36B77002873F4 /* Swift */,
+			);
+			path = ImageIO;
+			sourceTree = "<group>";
+		};
+		ACED7DA322E35310002873F4 /* CoreImage */ = {
+			isa = PBXGroup;
+			children = (
+				AC7F5A4922E722AB00EF3A58 /* ObjectiveC */,
+				AC7F5A4822E722A600EF3A58 /* Swift */,
+			);
+			path = CoreImage;
+			sourceTree = "<group>";
+		};
+		ACED7DA422E35317002873F4 /* vImage */ = {
+			isa = PBXGroup;
+			children = (
+				AC7F5A5022E74B2C00EF3A58 /* ObjectiveC */,
+				AC7F5A4F22E74B2500EF3A58 /* Swift */,
+			);
+			path = vImage;
+			sourceTree = "<group>";
+		};
+		ACED7DA522E3534E002873F4 /* ObjectiveC */ = {
+			isa = PBXGroup;
+			children = (
+				ACED7DA622E353C3002873F4 /* UIKitResizeImageObjc.h */,
+				ACED7DA722E353C3002873F4 /* UIKitResizeImageObjc.m */,
+			);
+			path = ObjectiveC;
+			sourceTree = "<group>";
+		};
+		ACED7DA922E354D8002873F4 /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				ACED7DAB22E354EC002873F4 /* UIKitResizeImageSwift.swift */,
+			);
+			path = Swift;
+			sourceTree = "<group>";
+		};
+		ACED7DAD22E36709002873F4 /* ObjectiveC */ = {
+			isa = PBXGroup;
+			children = (
+				ACED7DB122E36A60002873F4 /* CoreGraphicsResizeImageObjc.h */,
+				ACED7DB222E36A60002873F4 /* CoreGraphicsResizeImageObjc.m */,
+			);
+			path = ObjectiveC;
+			sourceTree = "<group>";
+		};
+		ACED7DAE22E36710002873F4 /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				ACED7DAF22E36728002873F4 /* CoreGraphicsResizeImageSwift.swift */,
+			);
+			path = Swift;
+			sourceTree = "<group>";
+		};
+		ACED7DB422E36B77002873F4 /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				ACED7DB522E36B9E002873F4 /* ImageIOResizeImageSwift.swift */,
+			);
+			path = Swift;
+			sourceTree = "<group>";
+		};
+		ACED7DB722E36D83002873F4 /* ObjectiveC */ = {
+			isa = PBXGroup;
+			children = (
+				ACED7DB822E36D92002873F4 /* ImageIOResizeImageObjc.h */,
+				ACED7DB922E36D92002873F4 /* ImageIOResizeImageObjc.m */,
+			);
+			path = ObjectiveC;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ACED7D7722E349AC002873F4 /* ResizeImageApp2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ACED7D8E22E349B0002873F4 /* Build configuration list for PBXNativeTarget "ResizeImageApp2" */;
+			buildPhases = (
+				ACED7D7422E349AC002873F4 /* Sources */,
+				ACED7D7522E349AC002873F4 /* Frameworks */,
+				ACED7D7622E349AC002873F4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ResizeImageApp2;
+			productName = ResizeImageApp2;
+			productReference = ACED7D7822E349AC002873F4 /* ResizeImageApp2.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ACED7D7022E349AC002873F4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = RXMobile;
+				TargetAttributes = {
+					ACED7D7722E349AC002873F4 = {
+						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
+					};
+				};
+			};
+			buildConfigurationList = ACED7D7322E349AC002873F4 /* Build configuration list for PBXProject "ResizeImageApp2" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ACED7D6F22E349AC002873F4;
+			productRefGroup = ACED7D7922E349AC002873F4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ACED7D7722E349AC002873F4 /* ResizeImageApp2 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ACED7D7622E349AC002873F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACED7D8522E349B0002873F4 /* Assets.xcassets in Resources */,
+				ACED7D8322E349AC002873F4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ACED7D7422E349AC002873F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC7F5A4B22E722C800EF3A58 /* CoreImageResizeImageSwift.swift in Sources */,
+				ACED7D8022E349AC002873F4 /* AutomaticTestController.m in Sources */,
+				ACE8F71F22E926F1008B1BD1 /* GBDeviceInfo_iOS.m in Sources */,
+				AC21609E22E8650900BA696B /* СalculateImageSize.m in Sources */,
+				AC7F5A5522E74D2C00EF3A58 /* vImageResizeImageObjc.m in Sources */,
+				ACED7DAC22E354EC002873F4 /* UIKitResizeImageSwift.swift in Sources */,
+				ACED7DB322E36A60002873F4 /* CoreGraphicsResizeImageObjc.m in Sources */,
+				ACED7D8B22E349B0002873F4 /* main.m in Sources */,
+				ACBDB8AD22EF02BF000C56D3 /* TestingHelper.m in Sources */,
+				ACED7DA822E353C3002873F4 /* UIKitResizeImageObjc.m in Sources */,
+				AC7F5A5222E74B5A00EF3A58 /* vImageResizeImageSwift.swift in Sources */,
+				ACED7DB622E36B9E002873F4 /* ImageIOResizeImageSwift.swift in Sources */,
+				ACBDB8A822EEF9D3000C56D3 /* ManualTestController.m in Sources */,
+				AC7F5A4E22E72BF000EF3A58 /* CoreImageResizeImageObjc.m in Sources */,
+				ACED7DBA22E36D92002873F4 /* ImageIOResizeImageObjc.m in Sources */,
+				ACE8F71E22E926F1008B1BD1 /* GBDeviceInfo_Common.m in Sources */,
+				ACED7D7D22E349AC002873F4 /* AppDelegate.m in Sources */,
+				ACED7DB022E36728002873F4 /* CoreGraphicsResizeImageSwift.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		ACED7D8122E349AC002873F4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ACED7D8222E349AC002873F4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ACED7D8C22E349B0002873F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		ACED7D8D22E349B0002873F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ACED7D8F22E349B0002873F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9XANS77P5U;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ResizeImageApp2/Frameworks",
+				);
+				INFOPLIST_FILE = ResizeImageApp2/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ResizeImageApp2/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "RXMobile-m.ResizeImageApp2";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ResizeImageApp2/ResizeImageApp2-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		ACED7D9022E349B0002873F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9XANS77P5U;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ResizeImageApp2/Frameworks",
+				);
+				INFOPLIST_FILE = ResizeImageApp2/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ResizeImageApp2/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "RXMobile-m.ResizeImageApp2";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ResizeImageApp2/ResizeImageApp2-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ACED7D7322E349AC002873F4 /* Build configuration list for PBXProject "ResizeImageApp2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACED7D8C22E349B0002873F4 /* Debug */,
+				ACED7D8D22E349B0002873F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ACED7D8E22E349B0002873F4 /* Build configuration list for PBXNativeTarget "ResizeImageApp2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACED7D8F22E349B0002873F4 /* Debug */,
+				ACED7D9022E349B0002873F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ACED7D7022E349AC002873F4 /* Project object */;
+}
