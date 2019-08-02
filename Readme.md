@@ -39,9 +39,10 @@
 
 - [📦 Additional materials](#additional-materials)
 
+<br>
 
 
-### Introduction to the issue
+## Introduction to the issue
 <br>
 When you download a picture from the Internet and try to insert it into the `UIImageView` you may encounter the following problem.
 
@@ -59,7 +60,7 @@ So before every developer is duty to independently compress the picture before i
 <br>
 <br>
 
-### An enumeration of key technologies
+## An enumeration of key technologies
 
 The compression procedure can be performed by different technologies, there are 5 in total.
 
@@ -73,7 +74,7 @@ This repository contains a project with code for each of the technologies in two
 <br>
 <br>
 
-### Test results
+## Test results
 
 Before writing my own test, I read an article on [NSHipter](https://nshipster.com/image-resizing/) about image compression, which also contained Performance Benchmarks.
 
@@ -101,7 +102,7 @@ vImageSwift                 | AverageTime For : 0.0178
 ----------------------------------------------------------------------
 ```
 
-### Interesting facts
+## Interesting facts
 
 Also, the performance of the technology is affected by the `size`/`resolution`/`image extension`.
 
@@ -111,10 +112,8 @@ For example, when editing `png` images, resolution in pixels is important, not t
 And for `jpg` pictures, the weight of the image in megabytes is important.
 **(That is, the first picture can have a resolution in pixels greater than the second one tens of times and process faster because it has less weight in megabytes)**.
 
-<br>
-<br>
 
-### Important Features
+## Important Features
 
 If you want to test technologies with your own pictures, you may notice that the same copy of pictures (with different resolutions) can be processed more efficiently by one technology or another.
 
@@ -138,7 +137,7 @@ For example, such a division may be effective for the `second-generation iPad Ai
 <br>
 <br>
 
-### Description of the test project
+## Description of the test project
 
 The test project contains two controllers.
 
@@ -148,9 +147,8 @@ The test project contains two controllers.
 
 
 <br>
-<br>
 
-### Code snippets
+## Code snippets
 
 
 ### Objective-C
