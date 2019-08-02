@@ -7,7 +7,9 @@
 
 - [📈 Test results](#test-results)
 
-- [👀 Important Features](#important-features)
+- [👀 Interesting facts](#interesting-facts)
+
+- [‼️ Important Features](#important-features)
 
 - [📋 Description of the test project](#description-of-the-test-project)
 
@@ -48,13 +50,13 @@ When you download a picture from the Internet and try to insert it into the `UII
 
 To display a picture in an instance of `UIImageView`, the operating system takes the original `UIImage` and compresses it to a rarefaction of `UIImageView`.
 
-![5d435a516b3f011503](https://i.loli.net/2019/08/02/5d435a516b3f011503.png)
+![](Documentation/ImagesAndSchemes/iphonescreenshot.png)
 
 During this operation, device performance may decline, from **60FPS** to **15-20FPS**.
 
 So before every developer is duty to independently compress the picture before inserting it in the `UIImageView`.
 
-![5d435a5d99bf622897](https://i.loli.net/2019/08/02/5d435a5d99bf622897.png)
+![](Documentation/ImagesAndSchemes/benchmark.png)
 
 <br>
 <br>
