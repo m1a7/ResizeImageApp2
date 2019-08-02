@@ -1,4 +1,3 @@
-
 ## Table of Contents
 
 - [📖 Introduction to the issue](#introduction-to-the-issue)
@@ -43,8 +42,8 @@
 
 <br>
 
-
 ## Introduction to the issue
+
 <br>
 When you download a picture from the Internet and try to insert it into the `UIImageView` you may encounter the following problem.
 
@@ -114,7 +113,6 @@ For example, when editing `png` images, resolution in pixels is important, not t
 And for `jpg` pictures, the weight of the image in megabytes is important.
 **(That is, the first picture can have a resolution in pixels greater than the second one tens of times and process faster because it has less weight in megabytes)**.
 
-
 ## Important Features
 
 If you want to test technologies with your own pictures, you may notice that the same copy of pictures (with different resolutions) can be processed more efficiently by one technology or another.
@@ -147,11 +145,9 @@ The test project contains two controllers.
 
 2. (Controller for automatic testing) there, each technology is called 5 times, after which the average time and the best technology are displayed.
 
-
 <br>
 
 ## Code snippets
-
 
 ### Objective-C
 
@@ -161,37 +157,29 @@ The test project contains two controllers.
 
 ![](/Documentation/CodeSnippetsImages/objc/uikitobjc.png)
 
-
-#### CoreGraphics Objc
+#### CoreGraphics Objc
 
 [Copy code](/Documentation/CodeSnippetsText/objc/coregraphicsobjc.txt)
 
 ![](/Documentation/CodeSnippetsImages/objc/coregraphicsobjc.png)
 
-
-
-#### ImageIO Objc
+#### ImageIO Objc
 
 [Copy code](/Documentation/CodeSnippetsText/objc/imageIOobjc.txt)
 
 ![](/Documentation/CodeSnippetsImages/objc/imageIOobjc.png)
 
-
-
-#### CoreImage Objc
+#### CoreImage Objc
 
 [Copy code](/Documentation/CodeSnippetsText/objc/coreImageObjc.txt)
 
 ![](/Documentation/CodeSnippetsImages/objc/coreImageObjc.png)
 
-
-
-#### vImage Objc
+#### vImage Objc
 
 [Copy code](/Documentation/CodeSnippetsText/objc/vImageObjc.txt)
 
 ![](/Documentation/CodeSnippetsImages/objc/vImageObjc.png)
-
 
 ---
 
@@ -226,9 +214,6 @@ The test project contains two controllers.
 [Copy code](/Documentation/CodeSnippetsText/swift/vImageSwift.txt)
 
 ![](/Documentation/CodeSnippetsImages/swift/vImageswift.png)
-
-
-
 
 <br>
 
