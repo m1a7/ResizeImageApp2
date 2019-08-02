@@ -13,34 +13,36 @@
 
 - [💻 Code Snippets ](#code-snippets)
 
-- [Objective-c](#objective-c)
+  - [Objective-c](#objective-c)
 
-- [UIKit](#uikit-objc)
+    - [UIKit](#uikit-objc)
 
-- [CoreGraphics](#coregraphics-objc)
+    - [CoreGraphics](#coregraphics-objc)
 
-- [ImageIO](#imageio-objc)
+    - [ImageIO](#imageio-objc)
 
-- [CoreImage](#coreimage-objc)
+    - [CoreImage](#coreimage-objc)
 
-- [vImage](#vimage-objc)
+    - [vImage](#vimage-objc)
 
-- [Swift](#swift)
+  - [Swift](#swift)
 
-- [UIKit](#uikit-swift)
+    - [UIKit](#uikit-swift)
 
-- [CoreGraphics](#coregraphics-swift)
+    - [CoreGraphics](#coregraphics-swift)
 
-- [ImageIO](#imageio-swift)
+    - [ImageIO](#imageio-swift)
 
-- [CoreImage](#coreimage-swift)
+    - [CoreImage](#coreimage-swift)
 
-- [vImage](#vimage-swift)
+    - [vImage](#vimage-swift)
 
 - [📦 Additional materials](#additional-materials)
 
-### Introduction to the issue
 
+
+### Introduction to the issue
+<br>
 When you download a picture from the Internet and try to insert it into the `UIImageView` you may encounter the following problem.
 
 To display a picture in an instance of `UIImageView`, the operating system takes the original `UIImage` and compresses it to a rarefaction of `UIImageView`.
@@ -53,18 +55,20 @@ So before every developer is duty to independently compress the picture before i
 
 ![5d435a5d99bf622897](https://i.loli.net/2019/08/02/5d435a5d99bf622897.png)
 
+<br>
+<br>
 ### An enumeration of key technologies
 
 The compression procedure can be performed by different technologies, there are 5 in total.
 
-**UIKit**
-**CoreGraphics**
-**ImageIO**
-**CoreImage**
-**vImage**.
+**UIKit** <br>
+**CoreGraphics** <br>
+**ImageIO** <br>
+**CoreImage** <br>
+**vImage** <br>
 
 This repository contains a project with code for each of the technologies in two languages at once. `Swift`/`Objective-c`.
-
+<br>
 ### Test results
 
 Before writing my own test, I read an article on [NSHipter](https://nshipster.com/image-resizing/) about image compression, which also contained Performance Benchmarks.
@@ -102,7 +106,7 @@ For example, when editing `png` images, resolution in pixels is important, not t
 
 And for `jpg` pictures, the weight of the image in megabytes is important.
 **(That is, the first picture can have a resolution in pixels greater than the second one tens of times and process faster because it has less weight in megabytes)**.
-
+<br>
 ### Important Features
 
 If you want to test technologies with your own pictures, you may notice that the same copy of pictures (with different resolutions) can be processed more efficiently by one technology or another.
@@ -124,7 +128,7 @@ All such performance tests are very **individual**.
 For example, if you notice that an image that weighs more than N-megabytes is better processed using N-technology, it may really be so on some specific type and model of device.
 
 For example, such a division may be effective for the `second-generation iPad Air`, but terribly not effective for the `iPhone 6/6s`.
-
+<br>
 ### Description of the test project
 
 The test project contains two controllers.
@@ -141,40 +145,40 @@ The test project contains two controllers.
 
 #### UIKit Objc
 
-[Copy code]()
+[Copy code](/Documentation/CodeSnippetsText/objc/uikitobjc.txt)
 
-![]( )
+![](/Documentation/CodeSnippetsImages/objc/uikitobjc.png)
 
 
 #### CoreGraphics Objc
 
-[Copy code]()
+[Copy code](/Documentation/CodeSnippetsText/objc/coregraphicsobjc.txt)
 
-![](  )
+![](/Documentation/CodeSnippetsImages/objc/coregraphicsobjc.png)
 
 
 
 #### ImageIO Objc
 
-[Copy code]()
+[Copy code](/Documentation/CodeSnippetsText/objc/imageIOobjc.txt)
 
-![](  )
+![](/Documentation/CodeSnippetsImages/objc/imageIOobjc.png)
 
 
 
 #### CoreImage Objc
 
-[Copy code]()
+[Copy code](/Documentation/CodeSnippetsText/objc/coreImageObjc.txt)
 
-![](  )
+![](/Documentation/CodeSnippetsImages/objc/coreImageObjc.png)
 
 
 
 #### vImage Objc
 
-[Copy code]()
+[Copy code](/Documentation/CodeSnippetsText/objc/vImageObjc.txt)
 
-![](  )
+![](/Documentation/CodeSnippetsImages/objc/vImageObjc.png)
 
 
 ---
@@ -183,39 +187,40 @@ The test project contains two controllers.
 
 #### UIKit Swift
 
-[Copy code]()
+[Copy code](/Documentation/CodeSnippetsText/swift/uikitswift.txt)
 
-![](  )
+![](/Documentation/CodeSnippetsImages/swift/uikitswift.png)
 
 #### CoreGraphics Swift
 
-[Copy code]()
+[Copy code](/Documentation/CodeSnippetsText/swift/coregraphicsswift.txt)
 
-![](  )
+![](/Documentation/CodeSnippetsImages/swift/coregraphicsswift.png)
 
 #### ImageIO Swift
 
-[Copy code]()
+[Copy code](/Documentation/CodeSnippetsText/swift/imageIOswift.txt)
 
-![](  )
+![](/Documentation/CodeSnippetsImages/swift/imageioswift.png)
 
 #### CoreImage Swift
 
-[Copy code]()
+[Copy code](/Documentation/CodeSnippetsText/swift/coreImageSwift.txt)
 
-![](  )
+![](/Documentation/CodeSnippetsImages/swift/coreimageswift.png)
 
 #### vImage Swift
 
-[Copy code]()
+[Copy code](/Documentation/CodeSnippetsText/swift/vImageSwift.txt)
 
-![](  )
-
-
+![](/Documentation/CodeSnippetsImages/swift/vImageswift.png)
 
 
 
+
+<br>
 ### Additional materials
 
-https://nshipster.com/image-resizing/
+https://nshipster.com/image-resizing/ <br>
+
 http://vocaro.com/trevor/blog/2009/10/12/resize-a-uiimage-the-right-way/

@@ -1,0 +1,24 @@
++ (nullable UIImage*) resizeImage:(UIImage*)image forSize:(CGSize)newSize
+{
+    CGImageRef imageRef = [image CGImage];
+    const size_t width  = newSize.width;
+    const size_t height = newSize.height;
+    size_t    bitsPerComponent = CGImageGetBitsPerComponent(imageRef);
+    CGColorSpaceRef colorSpace = CGImageGetColorSpace(imageRef);
+    CGBitmapInfo    bitmapInfo    = CGImageGetBitmapInfo(imageRef);
+    
+    CGRect rectForNewSize = CGRectMake(0.0f, 0.0f, width, height);
+    
+    CGContextRef context = CGBitmapContextCreate(NULL, width, height, bitsPerComponent, 0, colorSpace, bitmapInfo);
+    CGContextDrawImage(context, rectForNewSize, imageRef);
+
+    
+    CGImageRef scaledImageRef = CGBitmapContextCreateImage(context);
+    UIImage*   scaledImg      = [UIImage imageWithCGImage:scaledImageRef];
+
+    CGImageRelease(scaledImageRef);
+    CGColorSpaceRelease(colorSpace);
+    CGContextRelease(context);
+   
+    return scaledImg;
+}
