@@ -57,6 +57,8 @@ So before every developer is duty to independently compress the picture before i
 
 <br>
 <br>
+<br>
+
 ### An enumeration of key technologies
 
 The compression procedure can be performed by different technologies, there are 5 in total.
@@ -69,6 +71,8 @@ The compression procedure can be performed by different technologies, there are 
 
 This repository contains a project with code for each of the technologies in two languages at once. `Swift`/`Objective-c`.
 <br>
+<br>
+
 ### Test results
 
 Before writing my own test, I read an article on [NSHipter](https://nshipster.com/image-resizing/) about image compression, which also contained Performance Benchmarks.
@@ -106,7 +110,10 @@ For example, when editing `png` images, resolution in pixels is important, not t
 
 And for `jpg` pictures, the weight of the image in megabytes is important.
 **(That is, the first picture can have a resolution in pixels greater than the second one tens of times and process faster because it has less weight in megabytes)**.
+
 <br>
+<br>
+
 ### Important Features
 
 If you want to test technologies with your own pictures, you may notice that the same copy of pictures (with different resolutions) can be processed more efficiently by one technology or another.
@@ -129,6 +136,8 @@ For example, if you notice that an image that weighs more than N-megabytes is be
 
 For example, such a division may be effective for the `second-generation iPad Air`, but terribly not effective for the `iPhone 6/6s`.
 <br>
+<br>
+
 ### Description of the test project
 
 The test project contains two controllers.
@@ -137,8 +146,11 @@ The test project contains two controllers.
 
 2. (Controller for automatic testing) there, each technology is called 5 times, after which the average time and the best technology are displayed.
 
-### Code snippets
 
+<br>
+<br>
+
+### Code snippets
 
 
 ### Objective-C
@@ -219,8 +231,11 @@ The test project contains two controllers.
 
 
 <br>
+
 ### Additional materials
 
 https://nshipster.com/image-resizing/ <br>
 
 http://vocaro.com/trevor/blog/2009/10/12/resize-a-uiimage-the-right-way/
+
+[🇷🇺 Russian Readme](Readme(RU).md) 
