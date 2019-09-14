@@ -49,11 +49,6 @@
     CGFloat   imageWidth  = (CGFloat)[imageWidthNumber  floatValue];
     CGFloat   imageHeight = (CGFloat)[imageHeightNumber floatValue];
 
-
-//    NSString* UTI = (__bridge NSString *)UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension,
-//                                                                       (__bridge CFStringRef)extension,
-//                                                                       kUTTypeImage);
-
     NSString* UTI = (NSString *)CFBridgingRelease(UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension,
                                                                                         (__bridge CFStringRef)extension,
                                                                                         kUTTypeImage));
