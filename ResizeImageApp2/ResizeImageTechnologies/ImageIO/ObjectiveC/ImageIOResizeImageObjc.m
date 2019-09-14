@@ -50,11 +50,16 @@
     CGFloat   imageHeight = (CGFloat)[imageHeightNumber floatValue];
 
 
-    NSString* UTI = (__bridge NSString *)UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension,
-                                                                       (__bridge CFStringRef)extension,
-                                                                       kUTTypeImage);
-    [options setValue:UTI forKey:(__bridge NSString*)kCGImageSourceTypeIdentifierHint];
-    
+//    NSString* UTI = (__bridge NSString *)UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension,
+//                                                                       (__bridge CFStringRef)extension,
+//                                                                       kUTTypeImage);
+
+    NSString* UTI = (NSString *)CFBridgingRelease(UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension,
+                                                                                        (__bridge CFStringRef)extension,
+                                                                                        kUTTypeImage));
+    //[options setValue:UTI forKey:(__bridge NSString*)kCGImageSourceTypeIdentifierHint];
+    [options setValue:UTI forKey:(NSString*)kCGImageSourceTypeIdentifierHint];
+
     if ([UTI isEqualToString:(__bridge NSString*)kUTTypeJPEG] ||
         [UTI isEqualToString:(__bridge NSString*)kUTTypeTIFF] ||
         [UTI isEqualToString:(__bridge NSString*)kUTTypePNG]  ||

@@ -31,7 +31,6 @@
     UIImage*   scaledImg      = [UIImage imageWithCGImage:scaledImageRef];
 
     CGImageRelease(scaledImageRef);
-    CGColorSpaceRelease(colorSpace);
     CGContextRelease(context);
    
     return scaledImg;

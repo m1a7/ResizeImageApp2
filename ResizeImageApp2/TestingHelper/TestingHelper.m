@@ -162,7 +162,7 @@
 
 + (NSString*) convertEnumResizeTechnologyToString:(ResizeTechnology)enumValue
 {
-    NSString* convert;
+    NSString* convert = @"Switch not found mathes!";
     switch (enumValue) {
         case ResizeTechnology_UIKitObjc:          convert = @"UIKitObjc               ";  break;
         case ResizeTechnology_UIKitSwift:         convert = @"UIKitSwift              ";  break;

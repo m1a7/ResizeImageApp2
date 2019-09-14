@@ -66,7 +66,7 @@
     [TestingHelper resizeImageData:imageData forImgView:fitImgView byTechnology:ResizeTechnology_UIKitObjc neededSize:aspectFitImageSizeInPixels]);
     DLog(@"UIKitSwift AspectFit = %.4f\n ",
     [TestingHelper resizeImageData:imageData forImgView:fitImgView byTechnology:ResizeTechnology_UIKitSwift neededSize:aspectFitImageSizeInPixels]);
-
+    */
 
      // CoreGraphics
      DLog(@"CoreGraphicsObjc AspectFit  = %.4f",
@@ -82,21 +82,21 @@
     [TestingHelper resizeImageData:imageData forImgView:fitImgView byTechnology:ResizeTechnology_ImageIO_Swift neededSize:aspectFitImageSizeInPixels]);
    
     
-    
+    /*
     // ImageIO(Subsampling) (iOS 9+)
      DLog(@"ImageIO_Subsampling_Objc  AspectFit = %.4f",
     [TestingHelper resizeImageData:imageData forImgView:fitImgView byTechnology:ResizeTechnology_ImageIO_Subsampling_Objc  neededSize:aspectFitImageSizeInPixels]);
     
     DLog(@"ImageIO_Subsampling_Swift AspectFit = %.4f\n ",
     [TestingHelper resizeImageData:imageData forImgView:fitImgView byTechnology:ResizeTechnology_ImageIO_Subsampling_Swift  neededSize:aspectFitImageSizeInPixels]);
-*/
+    
     
     // CoreImage
     DLog(@"CoreImageObjc  AspectFit = %.4f",
     [TestingHelper resizeImageData:imageData forImgView:fitImgView byTechnology:ResizeTechnology_CoreImageObjc neededSize:aspectFitImageSizeInPixels]);
     DLog(@"CoreImageSwift AspectFit = %.4f\n ",
     [TestingHelper resizeImageData:imageData forImgView:fitImgView byTechnology:ResizeTechnology_CoreImageSwift neededSize:aspectFitImageSizeInPixels]);
-   
+   */
     /*
     // vImage
     DLog(@"vImageObjc  AspectFit = %.4f",

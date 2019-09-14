@@ -25,10 +25,10 @@
     CGFloat imageHeight = (CGFloat)[imageHeightNumber floatValue];
     
     CGFloat scale = MAX(newSize.width, newSize.height)/MAX(imageWidth, imageHeight);
-    if (scale <= 0){ return nil; }
+    if (scale <= 0){ CFRelease(imageSource); return nil; }
     
     CGFloat aspectRatio = imageWidth/imageHeight;
-    if (aspectRatio <= 0){ return nil; }
+    if (aspectRatio <= 0){ CFRelease(imageSource); return nil; }
         
     UIImage* scaledImage = [CoreImageResizeImageObjc resizeImageFromData:data scale:scale aspectRatio:aspectRatio];
     CFRelease(imageSource);
