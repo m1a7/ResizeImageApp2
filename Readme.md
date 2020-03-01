@@ -149,6 +149,8 @@ The test project contains two controllers.
 
 ## Code snippets
 
+ (⚠️)  Attention. 03/01/2020 Internal algorithms have been rewritten and the data code snippets are not relevant.
+
 ### Objective-C
 
 #### UIKit Objc

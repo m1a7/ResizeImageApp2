@@ -1,0 +1,307 @@
+
+
+
+Now the test will be run on device: iPhone 5s (AspectFit Mode)
+ 
+Name(vacation) | Size: 0,2 MB | SourceImage: {750, 913} | Will converted to: {312, 382}
+UIKitObjc               	| AverageTime For : 0.0325
+UIKitSwift              	| AverageTime For : 0.0299
+CoreGraphicsObjc        	| AverageTime For : 0.0185
+CoreGraphicsSwift       	| AverageTime For : 0.0187
+ImageIO_Objc            	| AverageTime For : 0.0175
+ImageIO_Swift           	| AverageTime For : 0.0203
+ImageIO_Subsampling_Objc	| AverageTime For : 0.0362
+ImageIO_Subsampling_Swift	| AverageTime For : 0.0207
+CoreImageObjc           	| AverageTime For : 0.1119
+CoreImageSwift          	| AverageTime For : 0.0590
+vImageObjc              	| AverageTime For : 0.0202
+vImageSwift             	| AverageTime For : 0.0214
+----------------------------------------------------------------------
+| The Best Technology: ImageIO_Objc             | Time: 0.0175
+----------------------------------------------------------------------
+=====================================================================
+Name(Bridge0.4MB) | Size: 0,3 MB | SourceImage: {1920, 1080} | Will converted to: {576, 324}
+UIKitObjc               	| AverageTime For : 0.0546
+UIKitSwift              	| AverageTime For : 0.0556
+CoreGraphicsObjc        	| AverageTime For : 0.0279
+CoreGraphicsSwift       	| AverageTime For : 0.0283
+ImageIO_Objc            	| AverageTime For : 0.0227
+ImageIO_Swift           	| AverageTime For : 0.0234
+ImageIO_Subsampling_Objc	| AverageTime For : 0.0685
+ImageIO_Subsampling_Swift	| AverageTime For : 0.0248
+CoreImageObjc           	| AverageTime For : 0.0978
+CoreImageSwift          	| AverageTime For : 0.0869
+vImageObjc              	| AverageTime For : 0.0443
+vImageSwift             	| AverageTime For : 0.0460
+----------------------------------------------------------------------
+| The Best Technology: ImageIO_Objc             | Time: 0.0227
+----------------------------------------------------------------------
+=====================================================================
+Name(Bridge2MB) | Size: 2,4 MB | SourceImage: {5917, 3945} | Will converted to: {572, 382}
+UIKitObjc               	| AverageTime For : 0.1180
+UIKitSwift              	| AverageTime For : 0.1214
+CoreGraphicsObjc        	| AverageTime For : 0.0999
+CoreGraphicsSwift       	| AverageTime For : 0.1036
+ImageIO_Objc            	| AverageTime For : 0.0936
+ImageIO_Swift           	| AverageTime For : 0.0978
+ImageIO_Subsampling_Objc	| AverageTime For : 0.1512
+ImageIO_Subsampling_Swift	| AverageTime For : 0.0996
+CoreImageObjc           	| AverageTime For : 1.1924
+CoreImageSwift          	| AverageTime For : 1.1593
+vImageObjc              	| AverageTime For : 0.3845
+vImageSwift             	| AverageTime For : 0.3900
+----------------------------------------------------------------------
+| The Best Technology: ImageIO_Objc             | Time: 0.0936
+----------------------------------------------------------------------
+=====================================================================
+Name(Desert3.97MB) | Size: 4,3 MB | SourceImage: {5760, 3840} | Will converted to: {572, 382}
+UIKitObjc               	| AverageTime For : 0.0981
+UIKitSwift              	| AverageTime For : 0.1004
+CoreGraphicsObjc        	| AverageTime For : 0.0446
+CoreGraphicsSwift       	| AverageTime For : 0.0492
+ImageIO_Objc            	| AverageTime For : 0.0412
+ImageIO_Swift           	| AverageTime For : 0.0461
+ImageIO_Subsampling_Objc	| AverageTime For : 0.0776
+ImageIO_Subsampling_Swift	| AverageTime For : 0.0483
+CoreImageObjc           	| AverageTime For : 1.1790
+CoreImageSwift          	| AverageTime For : 1.1800
+vImageObjc              	| AverageTime For : 0.3658
+vImageSwift             	| AverageTime For : 0.3811
+----------------------------------------------------------------------
+| The Best Technology: ImageIO_Objc             | Time: 0.0412
+----------------------------------------------------------------------
+=====================================================================
+Name(desert) | Size: 0,9 MB | SourceImage: {1920, 1080} | Will converted to: {576, 324}
+UIKitObjc               	| AverageTime For : 0.0603
+UIKitSwift              	| AverageTime For : 0.0605
+CoreGraphicsObjc        	| AverageTime For : 0.0306
+CoreGraphicsSwift       	| AverageTime For : 0.0316
+ImageIO_Objc            	| AverageTime For : 0.0253
+ImageIO_Swift           	| AverageTime For : 0.0264
+ImageIO_Subsampling_Objc	| AverageTime For : 0.0681
+ImageIO_Subsampling_Swift	| AverageTime For : 0.0285
+CoreImageObjc           	| AverageTime For : 0.0746
+CoreImageSwift          	| AverageTime For : 0.0903
+vImageObjc              	| AverageTime For : 0.0452
+vImageSwift             	| AverageTime For : 0.0462
+----------------------------------------------------------------------
+| The Best Technology: ImageIO_Objc             | Time: 0.0253
+----------------------------------------------------------------------
+=====================================================================
+Name(Fronalpstock1) | Size: 10,2 MB | SourceImage: {10109, 4542} | Will converted to: {576, 258}
+UIKitObjc               	| AverageTime For : 0.2640
+UIKitSwift              	| AverageTime For : 0.2804
+CoreGraphicsObjc        	| AverageTime For : 0.2490
+CoreGraphicsSwift       	| AverageTime For : 0.2553
+ImageIO_Objc            	| AverageTime For : 0.2426
+ImageIO_Swift           	| AverageTime For : 0.2495
+ImageIO_Subsampling_Objc	| AverageTime For : 0.2502
+ImageIO_Subsampling_Swift	| AverageTime For : 0.2500
+CoreImageObjc           	| AverageTime For : 2.2507
+CoreImageSwift          	| AverageTime For : 2.4788
+vImageObjc              	| AverageTime For : 1.0679
+vImageSwift             	| AverageTime For : 1.0094
+----------------------------------------------------------------------
+| The Best Technology: ImageIO_Objc             | Time: 0.2426
+----------------------------------------------------------------------
+=====================================================================
+Name(gta) | Size: 9,5 MB | SourceImage: {6000, 6000} | Will converted to: {382, 382}
+UIKitObjc               	| AverageTime For : 0.1333
+UIKitSwift              	| AverageTime For : 0.1435
+CoreGraphicsObjc        	| AverageTime For : 0.0620
+CoreGraphicsSwift       	| AverageTime For : 0.0732
+ImageIO_Objc            	| AverageTime For : 0.0613
+ImageIO_Swift           	| AverageTime For : 0.0730
+ImageIO_Subsampling_Objc	| AverageTime For : 0.1072
+ImageIO_Subsampling_Swift	| AverageTime For : 0.0744
+CoreImageObjc           	| AverageTime For : 2.3376
+CoreImageSwift          	| AverageTime For : 2.3783
+vImageObjc              	| AverageTime For : 0.6722
+vImageSwift             	| AverageTime For : 0.6979
+----------------------------------------------------------------------
+| The Best Technology: ImageIO_Objc             | Time: 0.0613
+----------------------------------------------------------------------
+=====================================================================
+Name(tropics) | Size: 0,6 MB | SourceImage: {1080, 1350} | Will converted to: {304, 382}
+UIKitObjc               	| AverageTime For : 0.0421
+UIKitSwift              	| AverageTime For : 0.0433
+CoreGraphicsObjc        	| AverageTime For : 0.0212
+CoreGraphicsSwift       	| AverageTime For : 0.0217
+ImageIO_Objc            	| AverageTime For : 0.0180
+ImageIO_Swift           	| AverageTime For : 0.0194
+ImageIO_Subsampling_Objc	| AverageTime For : 0.0501
+ImageIO_Subsampling_Swift	| AverageTime For : 0.0210
+CoreImageObjc           	| AverageTime For : 0.0613
+CoreImageSwift          	| AverageTime For : 0.0710
+vImageObjc              	| AverageTime For : 0.0318
+vImageSwift             	| AverageTime For : 0.0337
+----------------------------------------------------------------------
+| The Best Technology: ImageIO_Objc             | Time: 0.0180
+----------------------------------------------------------------------
+=====================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Now the test will be run on device: iPhone 5s (AspectFill Mode)
+ 
+Name(vacation) | Size: 0,2 MB | SourceImage: {750, 913} | Will converted to: {576, 700}
+UIKitObjc               	| AverageTime For : 0.0783
+UIKitSwift              	| AverageTime For : 0.0794
+CoreGraphicsObjc        	| AverageTime For : 0.0383
+CoreGraphicsSwift       	| AverageTime For : 0.0411
+ImageIO_Objc            	| AverageTime For : 0.0324
+ImageIO_Swift           	| AverageTime For : 0.0313
+ImageIO_Subsampling_Objc	| AverageTime For : 0.0234
+ImageIO_Subsampling_Swift	| AverageTime For : 0.0327
+CoreImageObjc           	| AverageTime For : 0.0595
+CoreImageSwift          	| AverageTime For : 0.0635
+vImageObjc              	| AverageTime For : 0.0263
+vImageSwift             	| AverageTime For : 0.0273
+----------------------------------------------------------------------
+| The Best Technology: ImageIO_Subsampling_Objc | Time: 0.0234
+----------------------------------------------------------------------
+=====================================================================
+Name(Bridge0.4MB) | Size: 0,3 MB | SourceImage: {1920, 1080} | Will converted to: {676, 381}
+UIKitObjc               	| AverageTime For : 0.0620
+UIKitSwift              	| AverageTime For : 0.0645
+CoreGraphicsObjc        	| AverageTime For : 0.0306
+CoreGraphicsSwift       	| AverageTime For : 0.0316
+ImageIO_Objc            	| AverageTime For : 0.0253
+ImageIO_Swift           	| AverageTime For : 0.0256
+ImageIO_Subsampling_Objc	| AverageTime For : 0.0755
+ImageIO_Subsampling_Swift	| AverageTime For : 0.0275
+CoreImageObjc           	| AverageTime For : 0.0820
+CoreImageSwift          	| AverageTime For : 0.1003
+vImageObjc              	| AverageTime For : 0.0476
+vImageSwift             	| AverageTime For : 0.0498
+----------------------------------------------------------------------
+| The Best Technology: ImageIO_Objc             | Time: 0.0253
+----------------------------------------------------------------------
+=====================================================================
+Name(Bridge2MB) | Size: 2,4 MB | SourceImage: {5917, 3945} | Will converted to: {576, 384}
+UIKitObjc               	| AverageTime For : 0.1178
+UIKitSwift              	| AverageTime For : 0.1204
+CoreGraphicsObjc        	| AverageTime For : 0.0957
+CoreGraphicsSwift       	| AverageTime For : 0.1003
+ImageIO_Objc            	| AverageTime For : 0.0925
+ImageIO_Swift           	| AverageTime For : 0.0973
+ImageIO_Subsampling_Objc	| AverageTime For : 0.1481
+ImageIO_Subsampling_Swift	| AverageTime For : 0.0990
+CoreImageObjc           	| AverageTime For : 1.4697
+2020-03-01 15:35:17.084407+0100 ResizeImageApp2[2360:482507] XPC connection interrupted
+CoreImageSwift          	| AverageTime For : 1.5091
+vImageObjc              	| AverageTime For : 0.5552
+vImageSwift             	| AverageTime For : 0.5662
+----------------------------------------------------------------------
+| The Best Technology: ImageIO_Objc             | Time: 0.0925
+----------------------------------------------------------------------
+=====================================================================
+Name(Desert3.97MB) | Size: 4,3 MB | SourceImage: {5760, 3840} | Will converted to: {576, 384}
+UIKitObjc               	| AverageTime For : 0.0997
+UIKitSwift              	| AverageTime For : 0.1008
+CoreGraphicsObjc        	| AverageTime For : 0.0461
+CoreGraphicsSwift       	| AverageTime For : 0.0628
+ImageIO_Objc            	| AverageTime For : 0.0434
+ImageIO_Swift           	| AverageTime For : 0.0495
+ImageIO_Subsampling_Objc	| AverageTime For : 0.1002
+ImageIO_Subsampling_Swift	| AverageTime For : 0.0527
+CoreImageObjc           	| AverageTime For : 1.5444
+CoreImageSwift          	| AverageTime For : 1.4533
+vImageObjc              	| AverageTime For : 0.4877
+vImageSwift             	| AverageTime For : 0.5574
+----------------------------------------------------------------------
+| The Best Technology: ImageIO_Objc             | Time: 0.0434
+----------------------------------------------------------------------
+=====================================================================
+Name(desert) | Size: 0,9 MB | SourceImage: {1920, 1080} | Will converted to: {676, 381}
+UIKitObjc               	| AverageTime For : 0.0975
+UIKitSwift              	| AverageTime For : 0.0817
+CoreGraphicsObjc        	| AverageTime For : 0.0372
+CoreGraphicsSwift       	| AverageTime For : 0.0375
+ImageIO_Objc            	| AverageTime For : 0.0311
+ImageIO_Swift           	| AverageTime For : 0.0330
+ImageIO_Subsampling_Objc	| AverageTime For : 0.1076
+ImageIO_Subsampling_Swift	| AverageTime For : 0.0703
+CoreImageObjc           	| AverageTime For : 0.1023
+CoreImageSwift          	| AverageTime For : 0.1099
+vImageObjc              	| AverageTime For : 0.0586
+vImageSwift             	| AverageTime For : 0.0559
+----------------------------------------------------------------------
+| The Best Technology: ImageIO_Objc             | Time: 0.0311
+----------------------------------------------------------------------
+=====================================================================
+Name(Fronalpstock1) | Size: 10,2 MB | SourceImage: {10109, 4542} | Will converted to: {846, 381}
+UIKitObjc               	| AverageTime For : 0.4095
+UIKitSwift              	| AverageTime For : 0.3707
+CoreGraphicsObjc        	| AverageTime For : 0.3531
+CoreGraphicsSwift       	| AverageTime For : 0.3564
+ImageIO_Objc            	| AverageTime For : 0.3285
+ImageIO_Swift           	| AverageTime For : 0.3611
+ImageIO_Subsampling_Objc	| AverageTime For : 0.4485
+ImageIO_Subsampling_Swift	| AverageTime For : 0.3136
+CoreImageObjc           	| AverageTime For : 2.6719
+CoreImageSwift          	| AverageTime For : 2.8027
+vImageObjc              	| AverageTime For : 0.8850
+vImageSwift             	| AverageTime For : 0.9172
+----------------------------------------------------------------------
+| The Best Technology: ImageIO_Subsampling_Swift | Time: 0.3136
+----------------------------------------------------------------------
+=====================================================================
+Name(gta) | Size: 9,5 MB | SourceImage: {6000, 6000} | Will converted to: {576, 576}
+UIKitObjc               	| AverageTime For : 0.1695
+UIKitSwift              	| AverageTime For : 0.1804
+CoreGraphicsObjc        	| AverageTime For : 0.0793
+CoreGraphicsSwift       	| AverageTime For : 0.0948
+ImageIO_Objc            	| AverageTime For : 0.0792
+ImageIO_Swift           	| AverageTime For : 0.0885
+ImageIO_Subsampling_Objc	| AverageTime For : 0.1480
+ImageIO_Subsampling_Swift	| AverageTime For : 0.0881
+CoreImageObjc           	| AverageTime For : 2.4622
+CoreImageSwift          	| AverageTime For : 2.4955
+vImageObjc              	| AverageTime For : 0.6932
+vImageSwift             	| AverageTime For : 0.7227
+----------------------------------------------------------------------
+| The Best Technology: ImageIO_Objc             | Time: 0.0792
+----------------------------------------------------------------------
+=====================================================================
+Name(tropics) | Size: 0,6 MB | SourceImage: {1080, 1350} | Will converted to: {576, 720}
+UIKitObjc               	| AverageTime For : 0.1256
+UIKitSwift              	| AverageTime For : 0.1245
+CoreGraphicsObjc        	| AverageTime For : 0.0604
+CoreGraphicsSwift       	| AverageTime For : 0.0616
+ImageIO_Objc            	| AverageTime For : 0.0497
+ImageIO_Swift           	| AverageTime For : 0.0523
+ImageIO_Subsampling_Objc	| AverageTime For : 0.0466
+ImageIO_Subsampling_Swift	| AverageTime For : 0.0525
+CoreImageObjc           	| AverageTime For : 0.0723
+CoreImageSwift          	| AverageTime For : 0.0856
+vImageObjc              	| AverageTime For : 0.0432
+vImageSwift             	| AverageTime For : 0.0450
+----------------------------------------------------------------------
+| The Best Technology: vImageObjc               | Time: 0.0432
+----------------------------------------------------------------------
+=====================================================================

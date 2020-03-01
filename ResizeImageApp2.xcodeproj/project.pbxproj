@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AC21609E22E8650900BA696B /* СalculateImageSize.m in Sources */ = {isa = PBXBuildFile; fileRef = AC21609D22E8650900BA696B /* СalculateImageSize.m */; };
 		AC7F5A4B22E722C800EF3A58 /* CoreImageResizeImageSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7F5A4A22E722C800EF3A58 /* CoreImageResizeImageSwift.swift */; };
 		AC7F5A4E22E72BF000EF3A58 /* CoreImageResizeImageObjc.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7F5A4D22E72BF000EF3A58 /* CoreImageResizeImageObjc.m */; };
 		AC7F5A5222E74B5A00EF3A58 /* vImageResizeImageSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7F5A5122E74B5A00EF3A58 /* vImageResizeImageSwift.swift */; };
 		AC7F5A5522E74D2C00EF3A58 /* vImageResizeImageObjc.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7F5A5422E74D2C00EF3A58 /* vImageResizeImageObjc.m */; };
 		ACBDB8A822EEF9D3000C56D3 /* ManualTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACBDB8A722EEF9D3000C56D3 /* ManualTestController.m */; };
 		ACBDB8AD22EF02BF000C56D3 /* TestingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = ACBDB8AC22EF02BF000C56D3 /* TestingHelper.m */; };
+		ACE435AE2404FBA900C8FDDC /* CalculateImageSize.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE435AD2404FBA900C8FDDC /* CalculateImageSize.m */; };
 		ACE8F70C22E9260D008B1BD1 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ACE8F70B22E9260D008B1BD1 /* libz.tbd */; };
 		ACE8F70E22E92619008B1BD1 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ACE8F70D22E92619008B1BD1 /* libc++.tbd */; };
 		ACE8F71E22E926F1008B1BD1 /* GBDeviceInfo_Common.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE8F71A22E926F1008B1BD1 /* GBDeviceInfo_Common.m */; };
@@ -32,8 +32,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AC21609C22E8650900BA696B /* СalculateImageSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "СalculateImageSize.h"; sourceTree = "<group>"; };
-		AC21609D22E8650900BA696B /* СalculateImageSize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "СalculateImageSize.m"; sourceTree = "<group>"; };
 		AC7F5A4A22E722C800EF3A58 /* CoreImageResizeImageSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreImageResizeImageSwift.swift; sourceTree = "<group>"; };
 		AC7F5A4C22E72BF000EF3A58 /* CoreImageResizeImageObjc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreImageResizeImageObjc.h; sourceTree = "<group>"; };
 		AC7F5A4D22E72BF000EF3A58 /* CoreImageResizeImageObjc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreImageResizeImageObjc.m; sourceTree = "<group>"; };
@@ -44,6 +42,8 @@
 		ACBDB8A722EEF9D3000C56D3 /* ManualTestController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ManualTestController.m; sourceTree = "<group>"; };
 		ACBDB8AB22EF02BF000C56D3 /* TestingHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestingHelper.h; sourceTree = "<group>"; };
 		ACBDB8AC22EF02BF000C56D3 /* TestingHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestingHelper.m; sourceTree = "<group>"; };
+		ACE435AC2404FBA900C8FDDC /* CalculateImageSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculateImageSize.h; sourceTree = "<group>"; };
+		ACE435AD2404FBA900C8FDDC /* CalculateImageSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculateImageSize.m; sourceTree = "<group>"; };
 		ACE8F70722E925B1008B1BD1 /* libGBDeviceInfo.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGBDeviceInfo.a; path = ResizeImageApp2/Frameworks/libGBDeviceInfo.a; sourceTree = "<group>"; };
 		ACE8F70B22E9260D008B1BD1 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		ACE8F70D22E92619008B1BD1 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
@@ -94,18 +94,9 @@
 		AC21609A22E8646A00BA696B /* SharedTechnologies */ = {
 			isa = PBXGroup;
 			children = (
-				AC21609B22E8647900BA696B /* CalculateImageSize */,
+				ACE435AB2404FBA900C8FDDC /* CalculateImageSize */,
 			);
 			path = SharedTechnologies;
-			sourceTree = "<group>";
-		};
-		AC21609B22E8647900BA696B /* CalculateImageSize */ = {
-			isa = PBXGroup;
-			children = (
-				AC21609C22E8650900BA696B /* СalculateImageSize.h */,
-				AC21609D22E8650900BA696B /* СalculateImageSize.m */,
-			);
-			path = CalculateImageSize;
 			sourceTree = "<group>";
 		};
 		AC7F5A4822E722A600EF3A58 /* Swift */ = {
@@ -167,6 +158,15 @@
 				ACBDB8AC22EF02BF000C56D3 /* TestingHelper.m */,
 			);
 			path = TestingHelper;
+			sourceTree = "<group>";
+		};
+		ACE435AB2404FBA900C8FDDC /* CalculateImageSize */ = {
+			isa = PBXGroup;
+			children = (
+				ACE435AC2404FBA900C8FDDC /* CalculateImageSize.h */,
+				ACE435AD2404FBA900C8FDDC /* CalculateImageSize.m */,
+			);
+			path = CalculateImageSize;
 			sourceTree = "<group>";
 		};
 		ACE8F6D622E9203F008B1BD1 /* Frameworks */ = {
@@ -446,7 +446,6 @@
 				AC7F5A4B22E722C800EF3A58 /* CoreImageResizeImageSwift.swift in Sources */,
 				ACED7D8022E349AC002873F4 /* AutomaticTestController.m in Sources */,
 				ACE8F71F22E926F1008B1BD1 /* GBDeviceInfo_iOS.m in Sources */,
-				AC21609E22E8650900BA696B /* СalculateImageSize.m in Sources */,
 				AC7F5A5522E74D2C00EF3A58 /* vImageResizeImageObjc.m in Sources */,
 				ACED7DAC22E354EC002873F4 /* UIKitResizeImageSwift.swift in Sources */,
 				ACED7DB322E36A60002873F4 /* CoreGraphicsResizeImageObjc.m in Sources */,
@@ -455,6 +454,7 @@
 				ACED7DA822E353C3002873F4 /* UIKitResizeImageObjc.m in Sources */,
 				AC7F5A5222E74B5A00EF3A58 /* vImageResizeImageSwift.swift in Sources */,
 				ACED7DB622E36B9E002873F4 /* ImageIOResizeImageSwift.swift in Sources */,
+				ACE435AE2404FBA900C8FDDC /* CalculateImageSize.m in Sources */,
 				ACBDB8A822EEF9D3000C56D3 /* ManualTestController.m in Sources */,
 				AC7F5A4E22E72BF000EF3A58 /* CoreImageResizeImageObjc.m in Sources */,
 				ACED7DBA22E36D92002873F4 /* ImageIOResizeImageObjc.m in Sources */,

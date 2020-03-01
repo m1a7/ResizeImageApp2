@@ -17,6 +17,8 @@
 #import "CoreImageResizeImageObjc.h"     // CoreImage
 #import "vImageResizeImageObjc.h"        // vImage
 
+#import "CalculateImageSize.h"
+
 @implementation TestingHelper
 
 /*--------------------------------------------------------------------------------------------------------------
@@ -61,28 +63,27 @@
                                  byTechnology:(ResizeTechnology)technology
                                    neededSize:(CGSize)neededSize
 {
-    UIImage* originalImage = [UIImage imageWithData:imageData];
     // UIKit
     if (technology == ResizeTechnology_UIKitObjc){
         return
-        ^{  imageView.image = [UIKitResizeImageObjc resizeImage:originalImage forSize:neededSize]; };
+        ^{  imageView.image = [UIKitResizeImageObjc imageFromData:imageData inSizeInPixels:neededSize]; };
     }
     
     if (technology == ResizeTechnology_UIKitSwift){
         return
-        ^{ imageView.image =  [UIKitResizeImageSwift resizeImage:originalImage forSize:neededSize]; };
+        ^{ imageView.image =  [UIKitResizeImageSwift imageFromData:imageData inSizeInPixels:neededSize]; };
     }
     //===============================================================================================================//
     
     // CoreGraphics
     if (technology == ResizeTechnology_CoreGraphicsObjc){
         return
-        ^{ imageView.image = [CoreGraphicsResizeImageObjc resizeImage:originalImage forSize:neededSize]; };
+        ^{ imageView.image = [CoreGraphicsResizeImageObjc imageFromData:imageData inSizeInPixels:neededSize]; };
     }
     if (technology == ResizeTechnology_CoreGraphicsSwift){
         if (@available(iOS 9, *)) {
             return
-            ^{  imageView.image = [CoreGraphicsResizeImageSwift resizeImage:originalImage forSize:neededSize]; };
+            ^{  imageView.image = [CoreGraphicsResizeImageSwift imageFromData:imageData inSizeInPixels:neededSize]; };
         }
     }
     //===============================================================================================================//
@@ -90,11 +91,11 @@
     // ImageIO
     if (technology == ResizeTechnology_ImageIO_Objc){
         return
-        ^{  imageView.image = [ImageIOResizeImageObjc resizeImageFromData:imageData forSize:neededSize]; };
+        ^{  imageView.image = [ImageIOResizeImageObjc imageFromData:imageData inSizeInPixels:neededSize]; };
     }
     if (technology == ResizeTechnology_ImageIO_Swift){
         return
-        ^{ imageView.image = [ImageIOResizeImageSwift resizeImageFromData:imageData forSize:neededSize]; };
+        ^{ imageView.image = [ImageIOResizeImageSwift imageFromData:imageData inSizeInPixels:neededSize]; };
     }
     //===============================================================================================================//
     
@@ -102,7 +103,7 @@
     if (technology == ResizeTechnology_ImageIO_Subsampling_Objc){
         if (@available(iOS 9, *)) {
             return
-            ^{  imageView.image = [ImageIOResizeImageObjc resizeImageFromDataWithSubsampling:imageData imgExtension:@"jpg" forSize:neededSize]; };
+            ^{  imageView.image = [ImageIOResizeImageObjc imageWithSubsamplingFromData:imageData imgExtension:@"jpg" inSizeInPixels:[CalculateImageSize convertCGSizeToPixels:neededSize]]; };
         }
     }
     if (technology == ResizeTechnology_ImageIO_Subsampling_Swift){
@@ -117,11 +118,11 @@
     // CoreImage
     if (technology == ResizeTechnology_CoreImageObjc){
         return
-        ^{  imageView.image = [CoreImageResizeImageObjc resizeImageFromData:imageData forSize:neededSize]; };
+        ^{  imageView.image = [CoreImageResizeImageObjc imageFromData:imageData inSizeInPixels:neededSize]; };
     }
     if (technology == ResizeTechnology_CoreImageSwift){
         return
-        ^{ imageView.image =  [CoreImageResizeImageSwift resizeImageFromData:imageData forSize:neededSize]; };
+        ^{ imageView.image =  [CoreImageResizeImageSwift imageFromData:imageData inSizeInPixels:neededSize]; };
     }
     //===============================================================================================================//
     
@@ -129,13 +130,14 @@
     // vImage
     if (technology == ResizeTechnology_vImageObjc){
         return
-        ^{ imageView.image = [vImageResizeImageObjc resizeImageFromData:imageData forSize:neededSize]; };
+        ^{ imageView.image = [vImageResizeImageObjc imageFromData:imageData inSizeInPixels:neededSize]; };
     }
     if (technology == ResizeTechnology_vImageSwift){
         return
-        ^{ imageView.image = [vImageResizeImageSwift resizeImageFromData:imageData forSize:neededSize]; };
+        ^{ imageView.image = [vImageResizeImageSwift imageFromData:imageData inSizeInPixels:neededSize]; };
     }
     //===============================================================================================================//
+   
     return nil;
 }
 

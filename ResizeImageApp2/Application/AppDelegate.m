@@ -7,7 +7,17 @@
 //
 
 #import "AppDelegate.h"
-
+/*
+ TODO List: (✅/🔲) 25/02/2020
+ 
+🔲 0. Update swift's file
+🔲 1. update readme
+🔲 2.
+🔲 3.
+🔲 4.
+🔲 5.
+ 
+ */
 @interface AppDelegate ()
 
 @end

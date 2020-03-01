@@ -1,19 +1,123 @@
-@objc internal static func resizeImage(_ image: UIImage, forSize: CGSize) -> UIImage? {
+/*--------------------------------------------------------------------------------------------------------------
+     Render a image in full size
+     --------------------------------------------------------------------------------------------------------------*/
+    
+    @objc internal static func imageFromData(_ data: Data) -> UIImage?
+    {
+        return UIImage.init(data: data as Data)
+    }
+    
+    /*--------------------------------------------------------------------------------------------------------------
+     Render a image in borders. Inside converts point to pixels
+     --------------------------------------------------------------------------------------------------------------*/
+    
+    @objc internal static func imageFromData(_ data: Data, inSizeInPoints points: CGSize) -> UIImage?
+    {
+      let image     = UIImage.init(data: data as Data)
+      var scaledImg : UIImage? = nil
+        
+      let rectForNewSize = CGRect.init(x: 0.0, y: 0.0, width: points.width, height:  points.height)
+      
+      if #available(iOS 10, *)
+      {
+        let renderer = UIGraphicsImageRenderer(size: points)
+        scaledImg = renderer.image { (context) in
+            image?.draw(in: rectForNewSize)
+        }
+      } else {
+        UIGraphicsBeginImageContextWithOptions(points, false, UIScreen.main.scale)
+        image?.draw(in: rectForNewSize)
+        scaledImg = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext();
+      }
      
+        return scaledImg
+    }
+    
+    
+    /*--------------------------------------------------------------------------------------------------------------
+     Render a image in borders
+     --------------------------------------------------------------------------------------------------------------*/
+    @objc internal static func imageFromData(_ data: Data, inSizeInPixels pixels: CGSize) -> UIImage?
+    {
+        let image     = UIImage.init(data: data as Data)
         var scaledImg : UIImage? = nil
-        let rectForNewSize = CGRect(origin: .zero, size: forSize)
-
+        
+        let rectForNewSize = CGRect.init(x: 0.0, y: 0.0, width: pixels.width, height:  pixels.height)
+        
+        if #available(iOS 10, *)
+        {
+            let format   = UIGraphicsImageRendererFormat()
+            format.scale = 1
+            
+            let renderer = UIGraphicsImageRenderer(size: pixels, format: format)
+            scaledImg = renderer.image { (context) in
+                image?.draw(in: rectForNewSize)
+            }
+        } else {
+            UIGraphicsBeginImageContextWithOptions(pixels, false, 1)
+            image?.draw(in: rectForNewSize)
+            scaledImg = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext();
+        }
+        
+        return scaledImg
+    }
+    
+    /*--------------------------------------------------------------------------------------------------------------
+     Render a image for the size of 'UIImageView', with regard to preserving the aspect ratio ('contetMode')
+     --------------------------------------------------------------------------------------------------------------*/
+    @objc internal static func imageFromData(_ data: Data, resizedForImageViewBounds sizeInPoints: CGSize, forContentMode mode:UIView.ContentMode) -> UIImage?
+    {
+        var scaledImg : UIImage? = nil
+        
+        let imgDataProvider = CGDataProvider(data: data as CFData)
+        let imageRef        = CGImage(jpegDataProviderSource: imgDataProvider!, decode: nil, shouldInterpolate: true, intent: .defaultIntent)
+        let originalImage : UIImage? = UIImage.init(cgImage:imageRef!)
+        
+        let optimalSizeInPixels = CalculateImageSize.calculate(inPixels: originalImage!.size, imageViewSizeInPoints:sizeInPoints, contentMode:mode)
+        
+        let rectForNewSize = CGRect.init(x: 0.0, y: 0.0, width:optimalSizeInPixels.width, height:optimalSizeInPixels.height)
+        
+        if #available(iOS 10, *)
+        {
+            let format   = UIGraphicsImageRendererFormat()
+            format.scale = 1
+            
+            let renderer = UIGraphicsImageRenderer(size: optimalSizeInPixels, format: format)
+            scaledImg = renderer.image { (context) in
+                originalImage?.draw(in: rectForNewSize)
+            }
+        } else {
+            UIGraphicsBeginImageContextWithOptions(optimalSizeInPixels, false, 1)
+            originalImage?.draw(in: rectForNewSize)
+            scaledImg = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext();
+        }
+        
+        return scaledImg
+    }
+    
+    
+    /*--------------------------------------------------------------------------------------------------------------
+     Resize image
+     --------------------------------------------------------------------------------------------------------------*/
+    
+    @objc internal static func resizeImage(_ image: UIImage, toSizeInPixels pixels: CGSize) -> UIImage? {
+        
+        var scaledImg : UIImage? = nil
+        let rectForNewSize = CGRect(origin: .zero, size: pixels)
+        
         if #available(iOS 10, *) {
-            let renderer = UIGraphicsImageRenderer(size: forSize)
+            let renderer = UIGraphicsImageRenderer(size: pixels)
             scaledImg = renderer.image { (context) in
                 image.draw(in: rectForNewSize)
             }
         } else {
-            UIGraphicsBeginImageContextWithOptions(forSize, false, UIScreen.main.scale)
+            UIGraphicsBeginImageContextWithOptions(pixels, false, UIScreen.main.scale)
             image.draw(in: rectForNewSize)
             scaledImg = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext();
         }
         return scaledImg
     }
-    

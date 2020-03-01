@@ -8,12 +8,39 @@
 
 #import "CoreImageResizeImageObjc.h"
 #import <CoreImage/CoreImage.h>
+#import "CalculateImageSize.h"
 
 
 @implementation CoreImageResizeImageObjc
 
+/*--------------------------------------------------------------------------------------------------------------
+  Render a image in full size
+ --------------------------------------------------------------------------------------------------------------*/
 
-+ (nullable UIImage*) resizeImageFromData:(NSData*)data forSize:(CGSize)newSize
++ (nullable UIImage*) imageFromData:(NSData*)data
+{
+    CIImage* ciImage = [CIImage imageWithData:data];
+    if (!ciImage) { return nil;}
+    UIImage*  originalImage = [UIImage imageWithCIImage:ciImage];
+    return    originalImage;
+}
+
+
+/*--------------------------------------------------------------------------------------------------------------
+ Render a image in borders. Inside converts point to pixels
+ --------------------------------------------------------------------------------------------------------------*/
+
++ (nullable UIImage*) imageFromData:(NSData*)data inSizeInPoints:(CGSize)points
+{
+    CGSize pixels = [CalculateImageSize convertCGSizeToPixels:points];
+    return [CoreImageResizeImageObjc imageFromData:data inSizeInPixels:pixels];
+}
+
+/*--------------------------------------------------------------------------------------------------------------
+   Render a image in borders
+ --------------------------------------------------------------------------------------------------------------*/
+
++ (nullable UIImage*) imageFromData:(NSData*)data inSizeInPixels:(CGSize)pixels
 {
     CGImageSourceRef imageSource = CGImageSourceCreateWithData((CFDataRef)data, NULL);
     NSDictionary*    properties  = (NSDictionary*)CFBridgingRelease(CGImageSourceCopyPropertiesAtIndex(imageSource, 0, nil));
@@ -24,27 +51,32 @@
     CGFloat imageWidth  = (CGFloat)[imageWidthNumber floatValue];
     CGFloat imageHeight = (CGFloat)[imageHeightNumber floatValue];
     
-    CGFloat scale = MAX(newSize.width, newSize.height)/MAX(imageWidth, imageHeight);
+    CGFloat scale = MAX(pixels.width, pixels.height)/MAX(imageWidth, imageHeight);
     if (scale <= 0){ CFRelease(imageSource); return nil; }
     
     CGFloat aspectRatio = imageWidth/imageHeight;
     if (aspectRatio <= 0){ CFRelease(imageSource); return nil; }
         
-    UIImage* scaledImage = [CoreImageResizeImageObjc resizeImageFromData:data scale:scale aspectRatio:aspectRatio];
+    UIImage* scaledImage = [CoreImageResizeImageObjc imageFromData:data scale:scale];
     CFRelease(imageSource);
     return scaledImage;
 }
 
-+ (nullable UIImage*) resizeImageFromData:(NSData*)data scale:(CGFloat)scale aspectRatio:(CGFloat)aspectRatio
+
+/*--------------------------------------------------------------------------------------------------------------
+ Renders the image by compressing or expanding it with 'scale' in mind, while maintaining the aspect ratio of 'aspectRatio'
+ --------------------------------------------------------------------------------------------------------------*/
+
+
++ (nullable UIImage*) imageFromData:(NSData*)data scale:(CGFloat)scale
 {
     CIImage* image = [CIImage imageWithData:data];
     if (!image) { return nil;}
     
     CIFilter* filter = [CIFilter filterWithName:@"CILanczosScaleTransform"];
-    [filter setValue:image forKey:kCIInputImageKey];
-    [filter setValue:[NSNumber numberWithFloat:scale]       forKey:kCIInputScaleKey];
-    [filter setValue:[NSNumber numberWithFloat:aspectRatio] forKey:kCIInputAspectRatioKey];
-
+    [filter setValue:image                            forKey:kCIInputImageKey];
+    [filter setValue:[NSNumber numberWithFloat:scale] forKey:kCIInputScaleKey];
+    
     CIContext* context = [CoreImageResizeImageObjc contextWithUsingSoftwareRender];
     CIImage*   outputCIImage = [filter outputImage];
     CGImageRef outputCGImage = [context createCGImage:outputCIImage fromRect:outputCIImage.extent];
@@ -52,11 +84,50 @@
     if (!outputCIImage || !outputCGImage){ return nil; }
     
     UIImage* scaledImage = [UIImage imageWithCGImage:outputCGImage];
-    CGImageRelease(outputCGImage);  
+    CGImageRelease(outputCGImage);
     return scaledImage;
 }
 
 
+/*--------------------------------------------------------------------------------------------------------------
+ Render a image for the size of 'UIImageView', with regard to preserving the aspect ratio ('contetMode')
+ --------------------------------------------------------------------------------------------------------------*/
+
++ (nullable UIImage*) imageFromData:(NSData*)data resizedForImageViewBounds:(CGSize)sizeInPoints forContentMode:(UIViewContentMode)contentMode
+{
+    // Get size of original image
+    CGImageSourceRef src = CGImageSourceCreateWithData((CFDataRef)data, NULL);
+    NSDictionary* properties = (NSDictionary*)CFBridgingRelease(CGImageSourceCopyPropertiesAtIndex(src, 0, nil));
+    
+    NSNumber* imageWidthNumber  = properties[(NSString *)CFBridgingRelease(kCGImagePropertyPixelWidth)];
+    NSNumber* imageHeightNumber = properties[(NSString *)CFBridgingRelease(kCGImagePropertyPixelHeight)];
+    
+    CGFloat   imageWidth  = (CGFloat)[imageWidthNumber  floatValue];
+    CGFloat   imageHeight = (CGFloat)[imageHeightNumber floatValue];
+    
+    CGSize originalImageSize = CGSizeMake(imageWidth, imageHeight);
+    
+    // Calculate optimal size
+    CGSize optimalSizeInPixels = [CalculateImageSize calculateSizeInPixels:originalImageSize imageViewSizeInPoints:sizeInPoints contentMode:contentMode];
+    
+    // Compute the scale
+    CGFloat scale = MAX(sizeInPoints.width, sizeInPoints.height)/MAX(optimalSizeInPixels.width, optimalSizeInPixels.height);
+    if (scale <= 0){ CFRelease(src); return nil; }
+    
+    // Compute the aspectRatio
+    CGFloat aspectRatio = originalImageSize.width/originalImageSize.height;
+    if (aspectRatio <= 0){ CFRelease(src); return nil; }
+    
+    // Render image
+    UIImage* scaledImage = [CoreImageResizeImageObjc imageFromData:data scale:scale];
+    CFRelease(src);
+    return scaledImage;
+}
+
+
+/*--------------------------------------------------------------------------------------------------------------
+ Helper methods.
+ --------------------------------------------------------------------------------------------------------------*/
 #pragma mark - CIContext
 
 + (CIContext*) contextWithOutOptions {
@@ -68,7 +139,6 @@
     NSDictionary* options = @{ kCIContextUseSoftwareRenderer : [NSNumber numberWithBool:NO]};
     return [CoreImageResizeImageObjc contextWithOptions:options];
 }
-
 
 + (CIContext*) contextWithOptions:(nullable NSDictionary<CIContextOption, id> *)options
 {

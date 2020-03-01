@@ -8,7 +8,7 @@
 
 #import "ManualTestController.h"
 // Calculate optimal image size
-#import "СalculateImageSize.h"
+#import "CalculateImageSize.h"
 
 // Get Info about device
 #import "GBDeviceInfo.h"
@@ -50,30 +50,45 @@
     
     DLog(@"Image.name (%@) in memory = %@",imageName ,[counter stringFromByteCount:imageData.length]);
     DLog(@"Image.size      in pixels = %@",NSStringFromCGSize(originalImage.size));
-    DLog(@"ImageViews.size in pixels = %@ | in points = %@",NSStringFromCGSize([СalculateImageSize transformStructureWithScaleFactor:self.aspectFitImageView.frame.size]),
+    DLog(@"ImageViews.size in pixels = %@ | in points = %@",NSStringFromCGSize([CalculateImageSize convertCGSizeToPixels:self.aspectFitImageView.frame.size]),
                                                             NSStringFromCGSize(self.aspectFitImageView.frame.size));
         
+
+    
+    
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /*
+          ___           _______..______    _______   ______ .___________.      _______  __  .___________.
+         /   \         /       ||   _  \  |   ____| /      ||           |     |   ____||  | |           |
+        /  ^  \       |   (----`|  |_)  | |  |__   |  ,----'`---|  |----`     |  |__   |  | `---|  |----`
+       /  /_\  \       \   \    |   ___/  |   __|  |  |         |  |          |   __|  |  |     |  |
+      /  _____  \  .----)   |   |  |      |  |____ |  `----.    |  |          |  |     |  |     |  |
+     /__/     \__\ |_______/    | _|      |_______| \______|    |__|     _____|__|     |__|     |__|
+                                                                        |______|
+     */
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
     
     // Manual (AspectFit) test
-    CGSize aspectFitImageSizeInPixels   = [СalculateImageSize calculateSizeInPixels:originalImage.size
-                                                                     imageViewSize:fitImgView.frame.size
-                                                                       contentMode:fitImgView.contentMode];
+    CGSize aspectFitImageSizeInPixels   = [CalculateImageSize calculateSizeInPixels:originalImage.size
+                                                              imageViewSizeInPoints:fitImgView.frame.size
+                                                                        contentMode:fitImgView.contentMode];
     DLog(@"aspectFitImageSize in pixels = %@\n ",NSStringFromCGSize(aspectFitImageSizeInPixels));
     
-   /*
+   
     //UIKit
     DLog(@"UIKitObjc  AspectFit = %.4f",
     [TestingHelper resizeImageData:imageData forImgView:fitImgView byTechnology:ResizeTechnology_UIKitObjc neededSize:aspectFitImageSizeInPixels]);
     DLog(@"UIKitSwift AspectFit = %.4f\n ",
     [TestingHelper resizeImageData:imageData forImgView:fitImgView byTechnology:ResizeTechnology_UIKitSwift neededSize:aspectFitImageSizeInPixels]);
-    */
+    
 
      // CoreGraphics
      DLog(@"CoreGraphicsObjc AspectFit  = %.4f",
      [TestingHelper resizeImageData:imageData forImgView:fitImgView byTechnology:ResizeTechnology_CoreGraphicsObjc neededSize:aspectFitImageSizeInPixels]);
      DLog(@"CoreGraphicsSwift AspectFit = %.4f\n ",
      [TestingHelper resizeImageData:imageData forImgView:fitImgView byTechnology:ResizeTechnology_CoreGraphicsSwift neededSize:aspectFitImageSizeInPixels]);
-   
+ 
     
     // ImageIO
     DLog(@"ImageIO_Objc  AspectFit = %.4f",
@@ -82,7 +97,7 @@
     [TestingHelper resizeImageData:imageData forImgView:fitImgView byTechnology:ResizeTechnology_ImageIO_Swift neededSize:aspectFitImageSizeInPixels]);
    
     
-    /*
+
     // ImageIO(Subsampling) (iOS 9+)
      DLog(@"ImageIO_Subsampling_Objc  AspectFit = %.4f",
     [TestingHelper resizeImageData:imageData forImgView:fitImgView byTechnology:ResizeTechnology_ImageIO_Subsampling_Objc  neededSize:aspectFitImageSizeInPixels]);
@@ -96,24 +111,33 @@
     [TestingHelper resizeImageData:imageData forImgView:fitImgView byTechnology:ResizeTechnology_CoreImageObjc neededSize:aspectFitImageSizeInPixels]);
     DLog(@"CoreImageSwift AspectFit = %.4f\n ",
     [TestingHelper resizeImageData:imageData forImgView:fitImgView byTechnology:ResizeTechnology_CoreImageSwift neededSize:aspectFitImageSizeInPixels]);
-   */
-    /*
+
+    
     // vImage
     DLog(@"vImageObjc  AspectFit = %.4f",
     [TestingHelper resizeImageData:imageData forImgView:fitImgView byTechnology:ResizeTechnology_vImageObjc neededSize:aspectFitImageSizeInPixels]);
     DLog(@"vImageSwift AspectFit = %.4f\n ",
     [TestingHelper resizeImageData:imageData forImgView:fitImgView byTechnology:ResizeTechnology_vImageSwift neededSize:aspectFitImageSizeInPixels]);
-   */
+   
   
     
-    
-    
-    
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     /*
+          ___           _______..______    _______   ______ .___________.      _______  __   __       __
+         /   \         /       ||   _  \  |   ____| /      ||           |     |   ____||  | |  |     |  |
+        /  ^  \       |   (----`|  |_)  | |  |__   |  ,----'`---|  |----`     |  |__   |  | |  |     |  |
+       /  /_\  \       \   \    |   ___/  |   __|  |  |         |  |          |   __|  |  | |  |     |  |
+      /  _____  \  .----)   |   |  |      |  |____ |  `----.    |  |          |  |     |  | |  `----.|  `----.
+     /__/     \__\ |_______/    | _|      |_______| \______|    |__|     _____|__|     |__| |_______||_______|
+                                                                       |______|
+     */
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+
      // Manual (AspectFill) test
-     CGSize aspectFillImageSizeInPixels = [СalculateImageSize calculateSizeInPixels:originalImage.size
-                                                                     imageViewSize:self.aspectFillImageView.frame.size
-                                                                       contentMode:self.aspectFillImageView.contentMode];
+     CGSize aspectFillImageSizeInPixels = [CalculateImageSize calculateSizeInPixels:originalImage.size
+                                                              imageViewSizeInPoints:self.aspectFillImageView.frame.size
+                                                                        contentMode:self.aspectFillImageView.contentMode];
      DLog(@"aspectFillImageSize in pixels = %@",NSStringFromCGSize(aspectFitImageSizeInPixels));
 
      // UIKit
@@ -153,7 +177,7 @@
      [TestingHelper resizeImageData:imageData forImgView:fillImgView byTechnology:ResizeTechnology_vImageObjc neededSize:aspectFillImageSizeInPixels]);
      DLog(@"vImageSwiftTime AspectFill = %.4f\n ",
      [TestingHelper resizeImageData:imageData forImgView:fillImgView byTechnology:ResizeTechnology_vImageSwift neededSize:aspectFillImageSizeInPixels]);
-     */
+    
 }
 
 

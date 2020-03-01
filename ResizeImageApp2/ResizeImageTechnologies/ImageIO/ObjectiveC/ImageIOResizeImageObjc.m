@@ -1,66 +1,137 @@
 //
 //  ImageIOResizeImageObjc.m
-//  ResizeImageApp2
+//  RXWebCacheNSOperation
 //
-//  Created by Uber on 20/07/2019.
+//  Created by Uber on 15/09/2019.
 //  Copyright © 2019 RXMobile. All rights reserved.
 //
 
 #import "ImageIOResizeImageObjc.h"
 #import <ImageIO/ImageIO.h>
 #import <MobileCoreServices/MobileCoreServices.h>
+#import "CalculateImageSize.h"
 
 @implementation ImageIOResizeImageObjc
 
-+ (nullable UIImage*) resizeImageFromData:(NSData*)data forSize:(CGSize)newSize
-{
-    CGImageSourceRef src = CGImageSourceCreateWithData((CFDataRef)data, NULL);
-    CFDictionaryRef options =
-    (__bridge CFDictionaryRef)@{ (id)kCGImageSourceCreateThumbnailWithTransform   : (id)kCFBooleanTrue,
-                                 (id)kCGImageSourceThumbnailMaxPixelSize          : (id)[NSNumber numberWithDouble:MAX(newSize.width, newSize.height)],
-                                 (id)kCGImageSourceCreateThumbnailFromImageAlways : (id)kCFBooleanTrue
-                                 };
-    
-    CGImageRef thumbnail = CGImageSourceCreateThumbnailAtIndex(src, 0, options);
-    
-    UIImage* scaledImage = [[UIImage alloc] initWithCGImage:thumbnail];
 
-    CFRelease(src);
-    CGImageRelease(thumbnail);
-    return scaledImage;
+/*--------------------------------------------------------------------------------------------------------------
+  Render a image in full size
+ --------------------------------------------------------------------------------------------------------------*/
+
++ (nullable UIImage*) imageFromData:(NSData*)data
+{
+    CGImageSourceRef  src = CGImageSourceCreateWithData((__bridge CFDataRef)data, NULL);
+    CGImageRef      cgImg = CGImageSourceCreateImageAtIndex(src, 0, NULL);
+    UIImage*        image = [UIImage imageWithCGImage:cgImg];
+    CGImageRelease(cgImg);
+    return image;
+
+}
+
+/*--------------------------------------------------------------------------------------------------------------
+  Render a image in borders. Inside converts point to pixels
+ --------------------------------------------------------------------------------------------------------------*/
+
++ (nullable UIImage*) imageFromData:(NSData*)data inSizeInPoints:(CGSize)points
+{
+    CGSize pixels = [CalculateImageSize convertCGSizeToPixels:points];
+    return [ImageIOResizeImageObjc imageFromData:data inSizeInPixels:pixels];
 }
 
 
-+ (nullable UIImage*) resizeImageFromDataWithSubsampling:(NSData*)data imgExtension:(NSString*)extension forSize:(CGSize)newSize NS_AVAILABLE_IOS(9_0)
+/*--------------------------------------------------------------------------------------------------------------
+  Render a image in borders
+ --------------------------------------------------------------------------------------------------------------*/
+
++ (nullable UIImage*) imageFromData:(NSData*)data inSizeInPixels:(CGSize)pixels
+{
+    CGImageSourceRef src = CGImageSourceCreateWithData((CFDataRef)data, NULL);
+    CFDictionaryRef options =   (__bridge CFDictionaryRef)(@{(id)kCGImageSourceCreateThumbnailWithTransform   : (id)kCFBooleanTrue,
+                                                             (id)kCGImageSourceThumbnailMaxPixelSize          : (id)[NSNumber numberWithDouble:MAX(pixels.width, pixels.height)],
+                                                             (id)kCGImageSourceCreateThumbnailFromImageAlways : (id)kCFBooleanTrue
+                                                             });
+    CGImageRef thumbnail = CGImageSourceCreateThumbnailAtIndex(src, 0, options);
+    
+    // (⚠️)  Может возвращать перевернутую картинку (Так то возвращает только если мы сюда передаем NSData
+    //       которая была получена путем конвертации из UIImagePNGRepresentation)
+    UIImage* scaled = [[UIImage alloc] initWithCGImage:thumbnail];
+    
+    CGImageRelease(thumbnail);
+    CFRelease(src);
+    return scaled;
+}
+
+
+/*--------------------------------------------------------------------------------------------------------------
+  Render a image for the size of 'UIImageView', with regard to preserving the aspect ratio ('contetMode')
+ --------------------------------------------------------------------------------------------------------------*/
+
++ (nullable UIImage*) imageFromData:(NSData*)data resizedForImageViewBounds:(CGSize)sizeInPoints forContentMode:(UIViewContentMode)contentMode
+{
+    // Get size of original image
+    CGImageSourceRef src = CGImageSourceCreateWithData((CFDataRef)data, NULL);
+    NSDictionary* properties = (NSDictionary*)CFBridgingRelease(CGImageSourceCopyPropertiesAtIndex(src, 0, nil));
+    
+    NSNumber* imageWidthNumber  = properties[(NSString *)CFBridgingRelease(kCGImagePropertyPixelWidth)];
+    NSNumber* imageHeightNumber = properties[(NSString *)CFBridgingRelease(kCGImagePropertyPixelHeight)];
+    
+    CGFloat   imageWidth  = (CGFloat)[imageWidthNumber  floatValue];
+    CGFloat   imageHeight = (CGFloat)[imageHeightNumber floatValue];
+    
+    CGSize originalImageSize = CGSizeMake(imageWidth, imageHeight);
+    
+    // Calculate optimal size
+    CGSize optimalSizeInPixels = [CalculateImageSize calculateSizeInPixels:originalImageSize imageViewSizeInPoints:sizeInPoints contentMode:contentMode];
+    
+    // Create parameters for rendering
+    CFDictionaryRef options =
+    (__bridge CFDictionaryRef)(@{(id)kCGImageSourceCreateThumbnailWithTransform   : (id)kCFBooleanTrue,
+                                 (id)kCGImageSourceThumbnailMaxPixelSize          : (id)[NSNumber numberWithDouble:MAX(optimalSizeInPixels.width, optimalSizeInPixels.height)],
+                                 (id)kCGImageSourceCreateThumbnailFromImageAlways : (id)kCFBooleanTrue
+                                });
+    // Render image
+    CGImageRef thumbnail = CGImageSourceCreateThumbnailAtIndex(src, 0, options);
+    UIImage*   scaled    = [[UIImage alloc] initWithCGImage:thumbnail];
+    
+    CGImageRelease(thumbnail);
+    CFRelease(src);
+    return scaled;
+}
+
+
+/*--------------------------------------------------------------------------------------------------------------
+   Uses the 'Subsampling' technology. Supports formats ('jpeg'/ 'tiff', 'png').
+ --------------------------------------------------------------------------------------------------------------*/
+
++ (nullable UIImage*) imageWithSubsamplingFromData:(NSData*)data imgExtension:(NSString*)extension inSizeInPixels:(CGSize)pixels NS_AVAILABLE_IOS(9_0)
 {
     CGImageSourceRef source = CGImageSourceCreateWithData((CFDataRef)data, NULL);
     NSMutableDictionary* options =
     (__bridge NSMutableDictionary *)((__bridge CFMutableDictionaryRef)
-    [@{(id)kCGImageSourceCreateThumbnailWithTransform   : (id)kCFBooleanTrue,
-       (id)kCGImageSourceThumbnailMaxPixelSize          : (id)[NSNumber numberWithDouble:MAX(newSize.width, newSize.height)],
-       (id)kCGImageSourceCreateThumbnailFromImageAlways : (id)kCFBooleanTrue
-       } mutableCopy]);
+                                     [@{(id)kCGImageSourceCreateThumbnailWithTransform   : (id)kCFBooleanTrue,
+                                        (id)kCGImageSourceThumbnailMaxPixelSize          : (id)[NSNumber numberWithDouble:MAX(pixels.width, pixels.height)],
+                                        (id)kCGImageSourceCreateThumbnailFromImageAlways : (id)kCFBooleanTrue
+                                        } mutableCopy]);
     
     NSDictionary* properties = (NSDictionary*)CFBridgingRelease(CGImageSourceCopyPropertiesAtIndex(source, 0, nil));
-
+    
     NSNumber *imageWidthNumber  = properties[(NSString *)CFBridgingRelease(kCGImagePropertyPixelWidth)];
     NSNumber *imageHeightNumber = properties[(NSString *)CFBridgingRelease(kCGImagePropertyPixelHeight)];
-
+    
     CGFloat   imageWidth  = (CGFloat)[imageWidthNumber  floatValue];
     CGFloat   imageHeight = (CGFloat)[imageHeightNumber floatValue];
-
+    
     NSString* UTI = (NSString *)CFBridgingRelease(UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension,
                                                                                         (__bridge CFStringRef)extension,
                                                                                         kUTTypeImage));
-    //[options setValue:UTI forKey:(__bridge NSString*)kCGImageSourceTypeIdentifierHint];
-    [options setValue:UTI forKey:(NSString*)kCGImageSourceTypeIdentifierHint];
-
+    [options setValue:UTI forKey:(__bridge NSString*)kCGImageSourceTypeIdentifierHint];
+    
     if ([UTI isEqualToString:(__bridge NSString*)kUTTypeJPEG] ||
         [UTI isEqualToString:(__bridge NSString*)kUTTypeTIFF] ||
         [UTI isEqualToString:(__bridge NSString*)kUTTypePNG]  ||
         [UTI hasPrefix:@"public.heif"])
     {
-        CGFloat minValue = MIN(imageWidth/newSize.width, imageHeight/newSize.height);
+        CGFloat minValue = MIN(imageWidth/pixels.width, imageHeight/pixels.height);
         if (minValue < 2.0f){
             [options setValue:[NSNumber numberWithFloat:2.0] forKey:(__bridge NSString*)kCGImageSourceSubsampleFactor];
         }

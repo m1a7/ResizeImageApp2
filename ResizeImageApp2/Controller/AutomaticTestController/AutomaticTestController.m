@@ -9,7 +9,7 @@
 #import "AutomaticTestController.h"
 
 // Calculate optimal image size
-#import "СalculateImageSize.h"
+#import "CalculateImageSize.h"
 
 // Get Info about device
 #import "GBDeviceInfo.h"
@@ -89,16 +89,14 @@
         //NSData* imageJpgData = UIImagePNGRepresentation(originalImage);
         NSData* imageJpgData = UIImageJPEGRepresentation(originalImage, 0.8);
         
-        CGSize aspectFitImageSizeInPixels   = [СalculateImageSize calculateSizeInPixels:originalImage.size
-                                                                         imageViewSize:imageView.frame.size
-                                                                           contentMode:imageView.contentMode];
+        CGSize aspectFitImageSizeInPixels   = [CalculateImageSize calculateSizeInPixels:originalImage.size
+                                                                  imageViewSizeInPoints:imageView.frame.size
+                                                                            contentMode:imageView.contentMode];
         
         
         DLog(@"Name(%@) | Size: %@ | SourceImage: %@ | Will converted to: %@",imageName, [counter stringFromByteCount:imageJpgData.length],
                                                                               NSStringFromCGSize(originalImage.size), NSStringFromCGSize(aspectFitImageSizeInPixels));
         
-      
-
         for (NSNumber* technology in technologies)
         {
               @autoreleasepool {
